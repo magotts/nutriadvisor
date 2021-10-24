@@ -14,6 +14,8 @@ export default function Navbar(props) {
       <div className="rightSide">
         <Link to="/"> Home </Link>
         <Link to="/food_diary"> Food Diary </Link>
+        <Link to="/weight"> Weight </Link>
+
         <Link to="/about"> About </Link>
         <Link to="/login"> Login </Link>
         <Link to="/register"> Register </Link>
