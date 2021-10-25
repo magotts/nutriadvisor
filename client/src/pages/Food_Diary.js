@@ -69,8 +69,7 @@ function Food_Diary() {
           Snacks:<input type="text" value={snacks} onChange={ event => setSnacks(event.target.value)} /><br/>
             <button>Add</button>
             </form>
-        <p>Dropdown - List all dates - SELECT date_created from food_diary where user_id = 1</p>
-        <p>When clicked, this will show up. </p>
+       
         <Table striped bordered hover>
   <thead>
     <tr>

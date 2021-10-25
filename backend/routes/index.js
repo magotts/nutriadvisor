@@ -1,9 +1,15 @@
-var express = require('express');
-var router = express.Router();
+const express = require("express");
+const app = express();
+const cors = require("cors");
+const pool = require("../lib/db");
+const { Pool } = require("pg");
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+// middleware
+app.use(cors());
+app.use(express.json()); // req.body
 
-module.exports = router;
+// ROUTES
+
+app.listen(5000, () => {
+  console.log("Server has started on port 5000");
+})

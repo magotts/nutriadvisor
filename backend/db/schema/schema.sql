@@ -17,7 +17,7 @@ CREATE TABLE users (
 CREATE TABLE biometrics (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-  gender VARCHAR(255) NOT NULL,
+  gender VARCHAR(255),
   height INTEGER,
   weight INTEGER, 
   age INTEGER, 

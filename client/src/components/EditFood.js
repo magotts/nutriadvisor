@@ -7,7 +7,7 @@ const EditFood = ({ food } ) => {
     event.preventDefault();
     try {
       const body = {breakfast, lunch, dinner, snacks};
-    const response  = await fetch(`http://localhost:5000/food_diary/${food.id}`, {
+    const response  = await fetch(`http://localhost:3001/food_diary/${food.id}`, {
       method: "PUT",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(body)

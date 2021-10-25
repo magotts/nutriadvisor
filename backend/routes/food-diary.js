@@ -58,7 +58,7 @@ catch(err) {
 router.get("/:id", async (req, res) => {
   try {
   const {id} = req.params;
-  const food = await db.query(`SELECT * FROM food_diary where user_id = $1`, [id]); 
+  const food = await db.query(`SELECT * FROM food_diary where user_id = $1 order by date_created asc`, [id]); 
   res.json(food.rows[0]);
 
   }
@@ -72,7 +72,7 @@ router.put("/:id", async (req, res) => {
   try {
   const {id} = req.params;
   const { breakfast, lunch, dinner, snacks } = req.body;
-  const updateFood = await db.query(`UPDATE food_diary SET user_id = 1, breakfast = $1, lunch = $2, dinner = $3, snacks = $4 WHERE id = $5`, [breakfast, lunch, dinner, snacks, id]); 
+  const updateFood = await db.query(`UPDATE food_diary SET user_id = 1, breakfast = $1, lunch = $2, dinner = $3, snacks = $4 WHERE id = $5 RETURNING *`, [breakfast, lunch, dinner, snacks, id]); 
   res.json("Food diary was updated.");
 
   }
