@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react";
-import { Link } from "react-router-dom";
 import { Table } from 'react-bootstrap';
+
 import Edit from "../components/EditFood";
+import '../pages/food.css';
 
 
 function Food_Diary() {
@@ -44,20 +45,23 @@ function Food_Diary() {
         body: JSON.stringify(body)
       })
       console.log(response)
+      window.location ="/food_diary";
     }
     catch (err) {
       console.error(err.message)
     }
   }
 
+
   useEffect(() => {
     getFood(); 
   }, []);
 
+
   return (
     <>
     <div>
-      <div>
+      <div >
         <h1>Food Diary</h1>
         <form onSubmit={onSubmitForm}>
           Breakfast:<input type="text" value={breakfast} onChange={ event => setBreakfast(event.target.value)}/><br/>
@@ -66,8 +70,7 @@ function Food_Diary() {
           Snacks:<input type="text" value={snacks} onChange={ event => setSnacks(event.target.value)} /><br/>
             <button>Add</button>
             </form>
-        <p>Dropdown - List all dates - SELECT date_created from food_diary where user_id = 1</p>
-        <p>When clicked, this will show up. </p>
+       <br/>
         <Table striped bordered hover>
   <thead>
     <tr>
@@ -94,7 +97,6 @@ function Food_Diary() {
   ))}
   </tbody>
 </Table>
-      
       </div>
     </div>
     </>

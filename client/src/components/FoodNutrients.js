@@ -1,5 +1,4 @@
 import React from 'react';
-import { Table } from 'react-bootstrap';
 
 const FoodNutrients = ({foodNutrients}) => {
   return foodNutrients.map(nutrient => {

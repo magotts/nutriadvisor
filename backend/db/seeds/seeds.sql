@@ -1,9 +1,9 @@
-INSERT INTO users(first_name, last_name, coach, email, password) 
+INSERT INTO users(first_name, last_name, coach, email, password, gender, age, height) 
 VALUES 
-('yvette', 'lim', false, 'hello@world.com', 'password'),
-('yi rong', 'qin', false, 'hi@yahoo.com', 'password'),
-('sonam', 'malhotra', false, 'heyhey@hey.com', 'password'),
-('blake', 'lively', true, 'coach@coach.com', 'password');
+('yvette', 'lim', false, 'hello@world.com', 'password', 'female', '30', '60'),
+('yi rong', 'qin', false, 'hi@yahoo.com', 'password', 'female', '25', '55'),
+('sonam', 'malhotra', false, 'heyhey@hey.com', 'password', 'female', '20', '50'),
+('blake', 'lively', true, 'coach@coach.com', 'password', 'female', '35', '65');
 
 INSERT INTO goals(user_id, goal_type) 
 VALUES
@@ -14,7 +14,7 @@ VALUES
 (1, 'egg, avocado', 'steak, water', 'spaghetti, coke', 'none'),
 (1, 'water, sandwich', 'none', 'pasta, water', 'none');
 
-INSERT INTO biometrics(user_id, gender, height, weight, age, calories_per_day) 
+INSERT INTO biometrics(user_id, weight, calories_per_day) 
 VALUES
-(2, 'female', '162', '50', '25', '2500'),
-(1, 'female', '200', '100', '30', '1500');
+(2, '150', '2500'),
+(1, '100', '1500');

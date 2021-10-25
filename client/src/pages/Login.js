@@ -1,39 +1,32 @@
-import React, {useState, useEffect} from "react";
-import { Link } from "react-router-dom";
+import React, {useState} from "react";
 
 
 function Login() {
-  useEffect(() => {
-    fetchQuotes();
-  }, []);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const [quotes, setQuotes] = useState([]);
-
-
-  const fetchQuotes =  async () => {
-    const data1= await fetch('https://type.fit/api/quotes');
-    const quotes = await data1.json();
-    console.log("Quotes is", quotes);
-    setQuotes(quotes);
-  }
-
-  const randomQuote = function (num) {
-    num = (Math.floor(Math.random() * 6) + 1);
-    return num;
+  const onSubmitForm = async (event) => {
+    try {
+      const body = { email, password };
+      const response = await fetch("http://localhost:3001/login", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(body)
+      })
+      console.log(response)
+    }
+    catch (err) {
+      console.error(err.message)
+    }
   }
 
   return (
     <>
-    <div>
-     <h1>Quotes List</h1>
-     <h1>Random number is {randomQuote()}</h1>
-    
-    {quotes.map(quote => (
-      <h1>Quotes: {quote.text} by {quote.author}</h1>
-    ))}
-   
-   
-    </div>
+    <form onSubmit={onSubmitForm}>
+     Email Address: <input type="text" value={email}  onChange={ event => setEmail(event.target.value)}/><br />
+     Password: <input type="password" value={password}  onChange={ event => setPassword(event.target.value)}/><br />
+     <button>Login</button>
+    </form>
     </>
   );
 
