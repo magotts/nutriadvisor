@@ -13,7 +13,7 @@ const cors = require("cors");
 
 const foodDiaryRouter = require('./routes/food-diary');
 const loginRouter = require('./routes/login');
-const weightRouter = require('./routes/weight');
+const biometricsRouter = require('./routes/biometrics');
 
 
 
@@ -44,7 +44,7 @@ app.use(
 
 app.use('/food_diary', foodDiaryRouter(db));
 app.use('/login', loginRouter(db));
-app.use('/weight', weightRouter(db));
+app.use('/biometrics', biometricsRouter(db));
 
 
 // logout
