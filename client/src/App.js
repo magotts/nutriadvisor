@@ -11,7 +11,7 @@ import Register from "./pages/Register";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Food_Diary from "./pages/Food_Diary";
-import Weight from "./pages/Weight";
+import Biometrics from "./pages/Biometrics";
 
 function App() {
 
@@ -23,7 +23,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/about" exact component={About} />
-          <Route path="/weight" exact component={Weight} />
+          <Route path="/biometrics" exact component={Biometrics} />
           <Route path="/food_diary" exact component={Food_Diary} />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Register} />
