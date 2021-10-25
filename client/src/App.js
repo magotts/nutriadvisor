@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import React, {useState} from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Home from "./pages/Home";
@@ -11,6 +11,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Food_Diary from "./pages/Food_Diary";
 import Food_Search from "./pages/Food_Search";
+import Chat from "./components/Chat";
+
 
 
 function App() {
@@ -23,11 +25,12 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/about" exact component={About} />
-          <Route path="/food_diary" exact component={Food_Diary} />
+          <Route path="/food_diary" exact component={Food_Diary}/>
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Register} />
           <Route path="/food_search" exact component={Food_Search} />
         </Switch>
+        <Chat />
         <Footer />
       </Router>
 
