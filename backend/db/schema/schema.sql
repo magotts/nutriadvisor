@@ -11,18 +11,18 @@ CREATE TABLE users (
   coach BOOLEAN DEFAULT FALSE,
   email VARCHAR(255) UNIQUE,
   password VARCHAR(255),
-  date_joined DATE DEFAULT NOW()
+  gender VARCHAR(255),
+  age INTEGER, 
+  height INTEGER,
+  date_joined TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE biometrics (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-  gender VARCHAR(255),
-  height INTEGER,
   weight INTEGER, 
-  age INTEGER, 
   calories_per_day INTEGER,
-  date_created DATE DEFAULT NOW()
+  date_created TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE goals (
@@ -39,7 +39,7 @@ CREATE TABLE food_diary (
   lunch VARCHAR(255) NOT NULL,
   dinner VARCHAR(255) NOT NULL,
   snacks VARCHAR(255) NOT NULL,
-  date_created DATE DEFAULT NOW()
+  date_created TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE messages (
@@ -47,7 +47,7 @@ CREATE TABLE messages (
   sender_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   receiver_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   conversation TEXT,
-  date_created DATE
+  date_created TIMESTAMP DEFAULT NOW()
 );
 
 
