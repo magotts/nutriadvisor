@@ -10,7 +10,7 @@ function Food_Diary() {
 
   const deleteFood = async (id) => {
     try {
-      const deleteFood = await fetch(`http://localhost:5000/food_diary/${id}`, {
+      const deleteFood = await fetch(`http://localhost:3000/food_diary/${id}`, {
         method: "DELETE"
       });
      setFoods(foods.filter(food => food.id !== id));
@@ -21,7 +21,7 @@ function Food_Diary() {
   }
   const getFood = async () => {
     try {
-      const response = await fetch("http://localhost:5000/food_diary");
+      const response = await fetch("http://localhost:3000/food_diary");
       const jsonData = await response.json();
       setFoods(jsonData);
     }
@@ -38,7 +38,7 @@ function Food_Diary() {
     event.preventDefault();
     try {
       const body = { breakfast, lunch, dinner, snacks };
-      const response = await fetch("http://localhost:5000/food_diary", {
+      const response = await fetch("http://localhost:3000/food_diary", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(body)
@@ -60,14 +60,13 @@ function Food_Diary() {
       <div>
         <h1>Food Diary</h1>
         <form onSubmit={onSubmitForm}>
-          Breakfast:<input type="text" value={breakfast} onChange={ event => setBreakfast(event.target.value)}/><br/>
+          Breakfast:<input class="breakfast" type="text" value={breakfast} onChange={ event => setBreakfast(event.target.value)}/><br/>
           Lunch:<input type="text" value={lunch} onChange={ event => setLunch(event.target.value)}/><br/>
           Dinner:<input type="text" value={dinner} onChange={ event => setDinner(event.target.value)}/><br/>
           Snacks:<input type="text" value={snacks} onChange={ event => setSnacks(event.target.value)} /><br/>
             <button>Add</button>
             </form>
-        <p>Dropdown - List all dates - SELECT date_created from food_diary where user_id = 1</p>
-        <p>When clicked, this will show up. </p>
+        
         <Table striped bordered hover>
   <thead>
     <tr>

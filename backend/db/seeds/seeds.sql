@@ -18,3 +18,11 @@ INSERT INTO biometrics(user_id, gender, height, weight, age, calories_per_day)
 VALUES
 (2, 'female', '162', '50', '25', '2500'),
 (1, 'female', '200', '100', '30', '1500');
+
+INSERT INTO messages(
+  sender_id ,
+  receiver_id ,
+  conversation ,
+  date_created ) 
+VALUES
+(1,2, "hy",
