@@ -12,6 +12,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Food_Diary from "./pages/Food_Diary";
 import Biometrics from "./pages/Biometrics";
+import Food_Search from "./pages/Food_Search";
+
 
 function App() {
 
@@ -27,6 +29,7 @@ function App() {
           <Route path="/food_diary" exact component={Food_Diary} />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Register} />
+          <Route path="/food_search" exact component={Food_Search} />
         </Switch>
         <Footer />
       </Router>
