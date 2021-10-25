@@ -2,10 +2,12 @@ import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import Foods from "../components/Foods";
+import FoodAlert from "../components/FoodAlert";
 
 const Food_Search = () => {
   const [query, setQuery] = useState("");
   const [foods, setFoods] = useState([]);
+  const [alert, setAlert] = useState("");
   // const [ENERC_KCAL, setENERC_KCAL] = useState({});
   // const [CHOCDF, setCHOCDF] = useState({});
   // const [CHOLE, setCHOLE] = useState({});
@@ -23,30 +25,35 @@ const Food_Search = () => {
   const api_url = `https://api.nal.usda.gov/fdc/v1/foods/search?query=${query}&pageSize=${encodeURIComponent(params.pagesize)}&api_key=${encodeURIComponent(params.api_key)}`;
 
   const getFood = async() => {
-    const result = await axios.get(api_url);
-    // const result = await axios.get(`https://trackapi.nutritionix.com/v2/search/instant?query=${query}`,
-    //   {headers: {
-    //     'x-app-id': '5ea2186d',
-    //     'x-app-key': '29aedbe15bbf7105ff8daa4a9b94b2b5'
-    //   }});
-      console.log(result);
-      setFoods(result.data.foods)
-      setQuery("");
-
-    // setENERC_KCAL(result.data.totalNutrients.ENERC_KCAL)
-    // setQuery("");
-
-    // setCHOCDF(result.data.totalNutrients.CHOCDF)
-    // setQuery("");
-
-    // setCHOLE(result.data.totalNutrients.CHOLE)
-    // setQuery("");
-
-    // setPROCNT(result.data.totalNutrients.PROCNT)
-    // setQuery("");
-
-    // setSUGAR(result.data.totalNutrients.SUGAR)
-    // setQuery("");
+    if (query !== "") {
+      const result = await axios.get(api_url);
+      // const result = await axios.get(`https://trackapi.nutritionix.com/v2/search/instant?query=${query}`,
+      //   {headers: {
+      //     'x-app-id': '5ea2186d',
+      //     'x-app-key': '29aedbe15bbf7105ff8daa4a9b94b2b5'
+      //   }});
+        console.log(result);
+        setFoods(result.data.foods)
+        setQuery("");
+  
+      // setENERC_KCAL(result.data.totalNutrients.ENERC_KCAL)
+      // setQuery("");
+  
+      // setCHOCDF(result.data.totalNutrients.CHOCDF)
+      // setQuery("");
+  
+      // setCHOLE(result.data.totalNutrients.CHOLE)
+      // setQuery("");
+  
+      // setPROCNT(result.data.totalNutrients.PROCNT)
+      // setQuery("");
+  
+      // setSUGAR(result.data.totalNutrients.SUGAR)
+      // setQuery("");
+      setAlert("");
+    } else {
+      setAlert("Please fill the form.");
+    }
   };
 
   const onChange = (event) => {
@@ -62,6 +69,7 @@ const Food_Search = () => {
     <div>
     <h1>Food Search</h1>
     <form onSubmit={onSubmit}>
+      {alert !== "" && <FoodAlert alert={alert} />}
       <input
       type="text"
       placeholder="Search Food"
