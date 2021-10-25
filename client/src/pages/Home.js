@@ -4,10 +4,15 @@ import axios from 'axios';
 
 function Home() {
   return (
-    <div>  
-    <img src="https://thecafesucrefarine.com/wp-content/uploads/2021/07/Watermelon-Arugula-Salad-with-Pepper-Jelly-Dressing-2.jpg" alt="logo"/>
-    <img src= "https://i0.wp.com/moriahbrooke.com/wp-content/uploads/2021/08/strawberrysalad-5.jpg?resize=1080%2C1620&ssl=1"></img>
+    <div>
+     
+      <img class="imagee" src= "https://i.pinimg.com/originals/88/87/32/888732a2075fcce999addef3ae50451a.gif"></img>
+      <img class="image" src = "https://media1.giphy.com/media/aelD3Hlq2glLG/giphy.gif"></img>
+  
+    
+    
     </div>
+
    
   );
 }

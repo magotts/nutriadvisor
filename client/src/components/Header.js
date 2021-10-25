@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 
+
 fetch("https://andruxnet-random-famous-quotes.p.mashape.com/?cat=movies&count=10", {
   method: 'POST',
   headers: {  
@@ -22,5 +23,6 @@ fetch("https://andruxnet-random-famous-quotes.p.mashape.com/?cat=movies&count=10
   return (
 
   )
+
 
 }
