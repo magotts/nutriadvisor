@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from "react";
-import { Link } from "react-router-dom";
+import React, {useState} from "react";
 import axios from 'axios';
 import Foods from "../components/Foods";
 import FoodAlert from "../components/FoodAlert";
