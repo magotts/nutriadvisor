@@ -1,4 +1,5 @@
 import './App.css';
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,10 +15,28 @@ import Food_Diary from "./pages/Food_Diary";
 import Biometrics from "./pages/Biometrics";
 import Food_Search from "./pages/Food_Search";
 import Exercise_Search from "./pages/Exercise_Search";
+import RequestCoach from './pages/RequestCoach';
+
+
+function setToken(userToken) {
+  sessionStorage.setItem('token', JSON.stringify(userToken));
+}
+
+function getToken() {
+  const tokenString = sessionStorage.getItem('token');
+  const userToken = JSON.parse(tokenString);
+  return userToken?.token
+}
 
 
 function App() {
+  const token = getToken();
 
+
+  if(!token) {
+    return <Login setToken={setToken} />
+  }
+  
   
   return (
     <div className="App">
@@ -32,8 +51,9 @@ function App() {
           <Route path="/register" exact component={Register} />
           <Route path="/food_search" exact component={Food_Search} />
           <Route path="/exercise_search" exact component={Exercise_Search} />
+          <Route path="/requestcoach" exact component={RequestCoach} />
         </Switch>
-        <Footer />
+      
       </Router>
     </div>
 
