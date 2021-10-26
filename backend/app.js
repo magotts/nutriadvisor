@@ -3,7 +3,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const { Pool } = require("pg");
-const cookieSession = require("cookie-session");
+
 const cors = require("cors");
 
 
@@ -28,13 +28,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use(
-  cookieSession({
-    name: "session",
-    keys: ["key1", "key2"],
-  })
-);
 
 
 // req.session.id = "1";
