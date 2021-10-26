@@ -18,3 +18,7 @@ INSERT INTO biometrics(user_id, weight, calories_per_day)
 VALUES
 (2, '150', '2500'),
 (1, '100', '1500');
+(2, 'female', '162', '50', '25', '2500'),
+(1, 'female', '200', '100', '30', '1500');
+
+
