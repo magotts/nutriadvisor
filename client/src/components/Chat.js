@@ -25,14 +25,18 @@ function Chat() {
 
 
   useEffect(() => {
-    addResponseMessage(`Hello Diana! Chat with your coach here.`);
+    addResponseMessage(`Hello! Chat with your coach here.`);
     socket.on("receive-message", (message) => {
       addResponseMessage(message);
-      const info = getUserInfo(1); 
-    console.log("info chat", userInfo)
+ 
     })
   }, []);
 
+
+  useEffect(() => {
+    const info = getUserInfo(1); 
+    console.log("chat user info", info)
+  }, []);
   // const randomName = uniqueNamesGenerator({
   //   dictionaries: [colors, animals],
   //   style: "upperCase",
@@ -40,7 +44,7 @@ function Chat() {
 
   const handleNewUserMessage = (newMessage) => {
     // console.log(`New message incoming! ${newMessage}`);
-    socket.emit("send-message", `Diana: ${newMessage}`);
+    socket.emit("send-message", `${userInfo[0].first_name}: ${newMessage}`);
     // Now send the message throught the backend API
  
   };
