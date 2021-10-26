@@ -8,7 +8,7 @@ const userchatRouter = (db) => {
     try {
     const {id} = req.params;
     const userInfo = await db.query(`select * from users where id = $1`, [id]);
-    console.log("user info", userInfo)
+    console.log("user info userchat", userInfo)
     res.json(userInfo.rows);
     
     }
