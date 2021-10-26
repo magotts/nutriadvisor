@@ -53,9 +53,6 @@ app.use('/chat', chatRouter(http));
 app.use('/userchat', userchatRouter(db));
 
 
-
-
-
 // logout
 // app.post("/logout", (req, res) => {
 //   req.session = null;
@@ -63,6 +60,11 @@ app.use('/userchat', userchatRouter(db));
 //   res.redirect("/");
 // });
 
+// app.use('/login',(req, res) => {
+//   res.send({
+//     token: 'test123'
+//   });
+// })
 
 // chat app
 http.listen(5001, () => console.log("Server is running on port 5001"));
