@@ -5,7 +5,7 @@ const Exercises = ({exercises}) => {
   
   return (
     <div>
-      <h2>Exercise Type: {name}</h2>
+      <h2>Exercise Type and Duration: {name}</h2>
       <h2>Exercise Duration: {duration_min}</h2>
       <h2>Calories Burned: {nf_calories}</h2>
     </div>

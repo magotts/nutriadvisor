@@ -63,7 +63,7 @@ const onSubmit = (event) => {
       <form onSubmit={onSubmit}>
         {alert !== "" && <Alert alert={alert} />}
         <div>
-          <input type="text" value={query} placeholder="Exercise Type" onChange={event=>onChange(event, setQuery)}/>
+          <input type="text" value={query} placeholder="Exercise Type and Duration" onChange={event=>onChange(event, setQuery)}/>
         </div>
         <div>
           <input type="text" value={gender} placeholder="Gender" onChange={event=>onChange(event, setGender)}/>
