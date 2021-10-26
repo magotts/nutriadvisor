@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const chatRouter = (http, db) => {
+const chatRouter = (http) => {
   const io = require("socket.io")(http, {
     cors: {
       origin: ["http://localhost:8000"],
