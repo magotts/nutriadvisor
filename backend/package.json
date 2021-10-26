@@ -17,5 +17,8 @@
     "nodemon": "^2.0.14",
     "pg": "^8.7.1",
     "pg-native": "^3.0.0"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5"
   }
 }

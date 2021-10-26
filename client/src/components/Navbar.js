@@ -15,8 +15,8 @@ export default function Navbar(props) {
         <Link to="/"> Home </Link>
         <Link to="/food_diary"> Food Diary </Link>
         <Link to="/about"> About </Link>
-        <Link to="/login"> Login </Link>
-        <Link to="/register"> Register </Link>
+        <Link to="/login"> Logged in as: hello@world.com  </Link>
+        <Link to="/logout"> Log Out </Link>
         <Link to="/requestcoach"> RequestCoach </Link>
       </div>
     </div>

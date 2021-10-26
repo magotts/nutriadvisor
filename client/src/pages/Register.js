@@ -7,8 +7,8 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-  const [PhoneNo, setPhoneNo] = useState("");
-
+  const [Mobile, setMobile] = useState("");
+  const [PostCode, setPostCode] = useState("");
   function validateForm() {
     return email.length > 0 && password.length > 0;
   }
@@ -31,12 +31,12 @@ export default function Login() {
             onChange={(e) => setName(e.target.value)}
           />
         <Form.Group size="lg" controlId="email">
-          <Form.Label>PhoneNo</Form.Label>
+          <Form.Label>Mobile</Form.Label>
           <Form.Control
             autoFocus
             type="value"
-            value={PhoneNo}
-            onChange={(e) => setPhoneNo(e.target.value)}
+            value={Mobile}
+            onChange={(e) => setMobile(e.target.value)}
           />
         </Form.Group>
         
@@ -56,6 +56,15 @@ export default function Login() {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group size="lg" controlId="email">
+          <Form.Label>PostCode</Form.Label>
+          <Form.Control
+            autoFocus
+            type="value"
+            value={PostCode}
+            onChange={(e) => setPostCode(e.target.value)}
           />
         </Form.Group>
         <Button block size="lg" type="submit" disabled={!validateForm()}>

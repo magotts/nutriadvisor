@@ -1,11 +1,22 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { useHistory } from "react-router-dom";
 
-
+async function loginUser(credentials) {
+  return fetch('http://localhost:3000/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(credentials)
+  })
+    .then(data => data.json())
+ }
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  let history = useHistory();
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
@@ -13,6 +24,8 @@ export default function Login() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    loginUser().then(usertoken => {history.push("/");})
+  
   }
 
   return (
@@ -38,7 +51,9 @@ export default function Login() {
         <Button block size="lg" type="submit" disabled={!validateForm()}>
           Login
         </Button>
+        
       </Form>
+      
     </div>
   );
 }
