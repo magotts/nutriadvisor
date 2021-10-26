@@ -34,7 +34,7 @@ function App() {
           <Route path="/food_search" exact component={Food_Search} />
         </Switch>
         <Chat />
-        <Footer />
+    
       </Router>
     </div>
 

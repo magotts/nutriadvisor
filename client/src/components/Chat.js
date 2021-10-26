@@ -1,18 +1,34 @@
 import { Widget, addResponseMessage } from "react-chat-widget";
 import "react-chat-widget/lib/styles.css";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import { io } from "socket.io-client";
-import { uniqueNamesGenerator, colors, animals } from "unique-names-generator"
+import { uniqueNamesGenerator, colors, animals } from "unique-names-generator";
+
 
 const socket = io("http://localhost:5001");
 
 function Chat() {
+  const [userInfo, setUserInfo] = useState([]);
+
+  const getUserInfo= async (id) => {
+    try {
+      const response = await fetch(`http://localhost:5001/userchat/${id}`);
+      const jsonData = await response.json();
+      console.log("json", jsonData)
+      setUserInfo(jsonData);
+      return jsonData;
+    }
+    catch (err) {
+      console.error(err.message)
+    }
+  }
+
 
   useEffect(() => {
     addResponseMessage(`Hello ${randomName}! Chat with your coach here.`);
     socket.on("receive-message", (message) => {
       addResponseMessage(message);
-
+      getUserInfo(1); 
     })
   }, []);
 
@@ -31,7 +47,7 @@ function Chat() {
   return (
     <div>
 
-    <Widget title="NutriAdvisor" subtitle={`Joined as ${randomName}`} handleNewUserMessage={handleNewUserMessage}/>
+    <Widget title="NutriAdvisor" subtitle={`Joined as ${userInfo.first_name}`} handleNewUserMessage={handleNewUserMessage}/>
     </div>
   );
 }
