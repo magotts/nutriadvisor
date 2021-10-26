@@ -15,6 +15,7 @@ const foodDiaryRouter = require('./routes/food-diary');
 const loginRouter = require('./routes/login');
 const biometricsRouter = require('./routes/biometrics');
 const chatRouter = require('./routes/chat');
+const userchatRouter = require('./routes/userchat');
 
 
 
@@ -48,7 +49,9 @@ app.use(
 app.use('/food_diary', foodDiaryRouter(db));
 app.use('/login', loginRouter(db));
 app.use('/biometrics', biometricsRouter(db));
-app.use('/chat', chatRouter(db));
+app.use('/chat', chatRouter(http));
+app.use('/userchat', userchatRouter(db));
+
 
 
 
