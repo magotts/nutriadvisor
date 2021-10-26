@@ -36,7 +36,7 @@ function App() {
           <Route path="/exercise_search" exact component={Exercise_Search} />
           <Route path="/requestcoach" exact component={RequestCoach} />
         </Switch>
-        <Footer />
+        
       </Router>
     </div>
 
