@@ -1,5 +1,10 @@
 
-
+.form_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
 body {
   padding: 0;
