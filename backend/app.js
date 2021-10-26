@@ -14,10 +14,13 @@ const cors = require("cors");
 const foodDiaryRouter = require('./routes/food-diary');
 const loginRouter = require('./routes/login');
 const biometricsRouter = require('./routes/biometrics');
+const chatRouter = require('./routes/chat');
+
 
 
 
 const app = express();
+const http = require("http").createServer(app);
 
 const db = require("./lib/db");
 db.connect();
@@ -36,7 +39,6 @@ app.use(
   })
 );
 
-
 // req.session.id = "1";
 
 // app.use('/', indexRouter);
@@ -45,7 +47,7 @@ app.use(
 app.use('/food_diary', foodDiaryRouter(db));
 app.use('/login', loginRouter(db));
 app.use('/biometrics', biometricsRouter(db));
-
+app.use('/chat', chatRouter(http));
 
 // logout
 // app.post("/logout", (req, res) => {
@@ -53,5 +55,8 @@ app.use('/biometrics', biometricsRouter(db));
 //   // redirect home
 //   res.redirect("/");
 // });
+
+http.listen(6000, () => console.log("Server is running on port 6000"));
+chatRouter(http);
 
 module.exports = app;
