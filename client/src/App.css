@@ -23,3 +23,47 @@ nav {
   list-style: none;
 
 }
+
+.image-1 {
+  margin: 0em;
+  padding-bottom: 0em;
+  height: 400px;
+  width: 1680px;
+}
+.image-2 {
+  margin: 1em;
+  padding: 0em;
+  height: 300px;
+  width: 550px;
+}
+.image-3 {
+  margin: 0em;
+  padding: 0em;
+  height: 300px;
+  width: 550px;
+}
+.image-4{
+  margin: 0em;
+  padding: 0em;
+  height: 300px;
+  width: 550px;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466__480.jpg");
+  /* Full height */
+  height: 100%;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.threePics {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em;
+  padding: 1em;
+}
