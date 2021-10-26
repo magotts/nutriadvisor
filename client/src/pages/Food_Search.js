@@ -79,7 +79,7 @@ const Food_Search = () => {
       <input type="submit" value="Search Food"/>
     </form>
     <div>
-      {foods !== [] && foods.map( foods => <Foods foods = {foods} />)}
+      {foods !== [] && foods.map( (foods, i) => <Foods key={i} foods = {foods} />)}
     </div>
 
     {/* <div>
