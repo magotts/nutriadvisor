@@ -39,6 +39,7 @@ app.use(
   })
 );
 
+
 // req.session.id = "1";
 
 // app.use('/', indexRouter);
@@ -47,7 +48,10 @@ app.use(
 app.use('/food_diary', foodDiaryRouter(db));
 app.use('/login', loginRouter(db));
 app.use('/biometrics', biometricsRouter(db));
-app.use('/chat', chatRouter(http));
+app.use('/chat', chatRouter(db));
+
+
+
 
 // logout
 // app.post("/logout", (req, res) => {
@@ -56,7 +60,9 @@ app.use('/chat', chatRouter(http));
 //   res.redirect("/");
 // });
 
-http.listen(6000, () => console.log("Server is running on port 6000"));
+
+// chat app
+http.listen(5001, () => console.log("Server is running on port 5001"));
 chatRouter(http);
 
 module.exports = app;
