@@ -114,7 +114,7 @@ function Biometrics() {
   return (
     <>
     <div>
-      <div>
+      <div className="food_diary">
         <h1>Biometrics History</h1><br/>
         <br/>
        

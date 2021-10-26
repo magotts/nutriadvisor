@@ -61,7 +61,7 @@ function Food_Diary() {
   return (
     <>
     <div>
-      <div >
+      <div className="food_diary" >
         <h1>Food Diary</h1>
         <form onSubmit={onSubmitForm}>
           Breakfast:<input class="breakfast" type="text" value={breakfast} onChange={ event => setBreakfast(event.target.value)}/><br/>
