@@ -4,7 +4,7 @@ import {useEffect} from "react";
 import { io } from "socket.io-client";
 import { uniqueNamesGenerator, colors, animals } from "unique-names-generator"
 
-const socket = io("http://localhost:8000");
+const socket = io("http://localhost:6000");
 
 function Chat() {
 
