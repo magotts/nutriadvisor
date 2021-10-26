@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react";
-import { Link } from "react-router-dom";
 import { Table } from 'react-bootstrap';
+
 import Edit from "../components/EditFood";
+import '../pages/food.css';
 
 
 function Food_Diary() {
@@ -10,7 +11,7 @@ function Food_Diary() {
 
   const deleteFood = async (id) => {
     try {
-      const deleteFood = await fetch(`http://localhost:3000/food_diary/${id}`, {
+      const deleteFood = await fetch(`http://localhost:5000/food_diary/${id}`, {
         method: "DELETE"
       });
      setFoods(foods.filter(food => food.id !== id));
@@ -21,7 +22,7 @@ function Food_Diary() {
   }
   const getFood = async () => {
     try {
-      const response = await fetch("http://localhost:3000/food_diary");
+      const response = await fetch("http://localhost:5000/food_diary");
       const jsonData = await response.json();
       setFoods(jsonData);
     }
@@ -38,26 +39,29 @@ function Food_Diary() {
     event.preventDefault();
     try {
       const body = { breakfast, lunch, dinner, snacks };
-      const response = await fetch("http://localhost:3000/food_diary", {
+      const response = await fetch("http://localhost:5000/food_diary", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(body)
       })
       console.log(response)
+      window.location ="/food_diary";
     }
     catch (err) {
       console.error(err.message)
     }
   }
 
+
   useEffect(() => {
     getFood(); 
   }, []);
 
+
   return (
     <>
     <div>
-      <div>
+      <div >
         <h1>Food Diary</h1>
         <form onSubmit={onSubmitForm}>
           Breakfast:<input class="breakfast" type="text" value={breakfast} onChange={ event => setBreakfast(event.target.value)}/><br/>
@@ -66,6 +70,7 @@ function Food_Diary() {
           Snacks:<input type="text" value={snacks} onChange={ event => setSnacks(event.target.value)} /><br/>
             <button>Add</button>
             </form>
+       <br/>
         
         <Table striped bordered hover>
   <thead>
@@ -93,7 +98,6 @@ function Food_Diary() {
   ))}
   </tbody>
 </Table>
-      
       </div>
     </div>
     </>
