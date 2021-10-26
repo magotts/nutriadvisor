@@ -12,6 +12,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Food_Diary from "./pages/Food_Diary";
 import Food_Search from "./pages/Food_Search";
+import Biometrics from "./pages/Biometrics";
 import RequestCoach from './pages/RequestCoach';
 
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/about" exact component={About} />
           <Route path="/food_diary" exact component={Food_Diary} />
+          <Route path="/biometrics" exact component={Biometrics} />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Register} />
           <Route path="/food_search" exact component={Food_Search} />
