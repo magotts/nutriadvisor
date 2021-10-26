@@ -64,13 +64,14 @@ function Food_Diary() {
       <div >
         <h1>Food Diary</h1>
         <form onSubmit={onSubmitForm}>
-          Breakfast:<input type="text" value={breakfast} onChange={ event => setBreakfast(event.target.value)}/><br/>
+          Breakfast:<input class="breakfast" type="text" value={breakfast} onChange={ event => setBreakfast(event.target.value)}/><br/>
           Lunch:<input type="text" value={lunch} onChange={ event => setLunch(event.target.value)}/><br/>
           Dinner:<input type="text" value={dinner} onChange={ event => setDinner(event.target.value)}/><br/>
           Snacks:<input type="text" value={snacks} onChange={ event => setSnacks(event.target.value)} /><br/>
             <button>Add</button>
             </form>
        <br/>
+        
         <Table striped bordered hover>
   <thead>
     <tr>

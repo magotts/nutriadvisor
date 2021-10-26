@@ -1,35 +1,44 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 
-function Login() {
+export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const onSubmitForm = async (event) => {
-    try {
-      const body = { email, password };
-      const response = await fetch("http://localhost:3001/login", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(body)
-      })
-      console.log(response)
-    }
-    catch (err) {
-      console.error(err.message)
-    }
+  function validateForm() {
+    return email.length > 0 && password.length > 0;
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
   }
 
   return (
-    <>
-    <form onSubmit={onSubmitForm}>
-     Email Address: <input type="text" value={email}  onChange={ event => setEmail(event.target.value)}/><br />
-     Password: <input type="password" value={password}  onChange={ event => setPassword(event.target.value)}/><br />
-     <button>Login</button>
-    </form>
-    </>
+    <div className="Login">
+      <Form onSubmit={handleSubmit}>
+        <Form.Group size="lg" controlId="email">
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            autoFocus
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group size="lg" controlId="password">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </Form.Group>
+        <Button block size="lg" type="submit" disabled={!validateForm()}>
+          Login
+        </Button>
+      </Form>
+    </div>
   );
-
 }
-
-export default Login;
