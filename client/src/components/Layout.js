@@ -1,7 +1,7 @@
 
-import Routes from "./Routes";
-import Sidebar from "./components/Sidebar";
-import Navbar from "./components/Navbar";
+import Routes from "../Routes";
+import Sidebar from "./Sidebar";
+import Navbar from "./Navbar";
 
 function Layout(props) {
     return (

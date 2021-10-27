@@ -3,17 +3,23 @@ import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import FoodBankIcon from '@mui/icons-material/FoodBank';
 import CalculateIcon from '@mui/icons-material/Calculate';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 
 export const SidebarData = [ 
   { 
     title: "Home",
     icon: <HomeIcon />,
-    link: "/home"
+    link: "/"
   },
   { 
     title: "User Profile",
     icon: <AccountCircleIcon />,
-    link: "/home"
+    link: "/userdashboard"
+  },
+  { 
+    title: "Food Diary",
+    icon: <MenuBookIcon />,
+    link: "/food_diary"
   },
   { 
     title: "Calorie Calculator",
@@ -28,6 +34,6 @@ export const SidebarData = [
   { 
     title: "Exercise",
     icon: <FitnessCenterIcon />,
-    link: "/home"
+    link: "/exercise_search"
   },
 ]

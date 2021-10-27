@@ -1,26 +1,25 @@
 import React from "react";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import Food_Diary from "./pages/Food_Diary";
-import Home from "./pages/Home";
+import Page1 from "./pages/Page-1";
+import Page2 from "./pages/Page-2";
+import Page3 from "./pages/Page-3";
 import Dashboard from "./pages/Dashboard";
-import Biometrics from "./pages/Biometrics";
-import Food_Search from "./pages/Food_Search";
-import UserDashboard from "./components/UserDashboard";
-import Exercise_Search from "./pages/Exercise_Search";
-
+import Layout from "./components/Layout";
 
 function Routes() {
     return (
         <BrowserRouter>
-            <Switch>
-                <Route path="/" exact component={Dashboard}/>
-                <Route path="/" exact component={Home} />
-                <Route path="/userdashboard" exact component={UserDashboard} />
-                <Route path="/biometrics" exact component={Biometrics} />
-                <Route path="/food_diary" exact component={Food_Diary} />
-                <Route path="/food_search" exact component={Food_Search} />
-                <Route path="/exercise_search" exact component={Exercise_Search} />
-            </Switch>
+            <Route render={(props)=>(
+                <Layout {...props}>
+                    <Switch>
+                        <Route path="/" exact component={Dashboard}/>
+                        <Route path="/dashboard" exact component={Dashboard}/>
+                        <Route path="/page-1" component={Page1}/>
+                        <Route path="/page-2" component={Page2}/>
+                        <Route path="/page-3" component={Page3}/>
+                    </Switch>
+                </Layout>
+            )}/>
         </BrowserRouter>
     )
 }

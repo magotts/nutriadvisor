@@ -156,6 +156,7 @@ userdashboard-li a:hover {
   width: 300px;
   height: 100%;
   background-color: rgb(120, 231, 198);
+  
 }
 
 .sidebarList {
@@ -197,4 +198,8 @@ background-color:cadetblue;
 
 .row #title {
   flex: 70%;
+}
+
+.sidebarcontainer {
+  margin-left: 300px;
 }

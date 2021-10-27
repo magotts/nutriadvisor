@@ -16,7 +16,7 @@ import Biometrics from "./pages/Biometrics";
 import Food_Search from "./pages/Food_Search";
 import Chat from "./components/Chat";
 import UserDashboard from "./components/UserDashboard";
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./components/Sidebar"
 
 import Exercise_Search from "./pages/Exercise_Search";
 import RequestCoach from './pages/RequestCoach';
@@ -31,8 +31,12 @@ function App() {
     <div className="App">
       <Router>
         <Navbar/>
+
+         {/* When user is logged in, show the sidebar page in UserDashboard */}
+        {/* <Sidebar /> 
+        <div className="sidebarcontainer"> */}
         <Switch>
-          <Route path="/" exact component={Home} />
+        <Route path="/" exact component={Home} />
           <Route path="/about" exact component={About} />
           <Route path="/biometrics" exact component={Biometrics} />
           <Route path="/food_diary" exact component={Food_Diary} />
@@ -43,10 +47,11 @@ function App() {
           <Route path="/requestcoach" exact component={RequestCoach} />
           <Route path="/userdashboard" exact component={UserDashboard} />
         </Switch>
-        {auth &&
-        <>
-        <Sidebar /> <Chat />
-        </> }
+        {/* </div> */}
+       
+        {auth && <> 
+   <Chat /> 
+        </>}
     
       </Router>
      
@@ -56,3 +61,15 @@ function App() {
 }
 
 export default App;
+
+
+// <Route path="/" exact component={Home} />
+// <Route path="/about" exact component={About} />
+// <Route path="/biometrics" exact component={Biometrics} />
+// <Route path="/food_diary" exact component={Food_Diary} />
+// <Route path="/login" exact component={Login} />
+// <Route path="/register" exact component={Register} />
+// <Route path="/food_search" exact component={Food_Search} />
+// <Route path="/exercise_search" exact component={Exercise_Search} />
+// <Route path="/requestcoach" exact component={RequestCoach} />
+// <Route path="/userdashboard" exact component={UserDashboard} />
