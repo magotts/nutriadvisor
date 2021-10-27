@@ -34,25 +34,25 @@ nav {
 }
 
 .image-1 {
-  height: 400px;
+  height: 490px;
   width: 100%;
 }
 
 .image-2 {
-  height: 300px;
-  width: 550px;
+  height: 320px;
+  width: 40%;
   padding:1em;
 }
 
 .image-3 {
-  height: 300px;
-  width: 550px;
+  height: 320px;
+  width: 40%;
   padding:1em;
 }
 
 .image-4{
-  height: 300px;
-  width: 550px;
+  height: 320px;
+  width: 40%;
   padding:1em;
 }
 
@@ -120,4 +120,17 @@ nav {
   flex-direction: row;
   justify-content: center;
   padding:1em;
+}
+
+.leftalign {
+  display: flex;
+  justify-content: center;
+  font-size: large;
+}
+
+.Paragraph{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
 }
