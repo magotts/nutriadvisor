@@ -4,7 +4,8 @@
   background-color: #6bd1fa;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 .navlogin {
   display: flex;
@@ -20,20 +21,20 @@
   height: 100%;
   display: flex;
   align-items: center;
-  padding-left: 150px;
+  justify-content: flex-start;
 }
 
-.nav-img {
+.navbar .nav-img {
   width: 400;
   height: 94%;
 }
 
 .navbar .rightSide {
-  flex: 50%;
   height: 100%;
   display: flex;
+  align-self: flex-end;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
 }
 
 .navbar a {

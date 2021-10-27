@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import { Widget } from "react-chat-widget";
 
 function Home() {
+
+
   return (
     <div className="parallax">
       <img class = "image-1" src ="https://static.wixstatic.com/media/3cd817_01efa93dfc2b4b77808f98f8915ba723~mv2.gif"></img>

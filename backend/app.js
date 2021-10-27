@@ -14,10 +14,15 @@ const cors = require("cors");
 const foodDiaryRouter = require('./routes/food-diary');
 const loginRouter = require('./routes/login');
 const biometricsRouter = require('./routes/biometrics');
+const chatRouter = require('./routes/chat');
+const userchatRouter = require('./routes/userchat');
+const userdashboardRouter = require('./routes/userdashboard');
+
 
 
 
 const app = express();
+const http = require("http").createServer(app);
 
 const db = require("./lib/db");
 db.connect();
@@ -38,6 +43,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/food_diary', foodDiaryRouter(db));
 app.use('/login', loginRouter(db));
 app.use('/biometrics', biometricsRouter(db));
+app.use('/chat', chatRouter(http));
+app.use('/userchat', userchatRouter(db));
+app.use('/userdashboard', userdashboardRouter(db));
 
 
 // logout
@@ -46,5 +54,15 @@ app.use('/biometrics', biometricsRouter(db));
 //   // redirect home
 //   res.redirect("/");
 // });
+
+// app.use('/login',(req, res) => {
+//   res.send({
+//     token: 'test123'
+//   });
+// })
+
+// chat app
+http.listen(5001, () => console.log("Server is running on port 5001"));
+chatRouter(http);
 
 module.exports = app;

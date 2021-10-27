@@ -74,8 +74,10 @@ export default function Login() {
     event.preventDefault();
     email && login(email, password);
   };
+  
 
   return (
+    <div className="form_center">
     <div className="login">
       <form onSubmit={onSubmit}>
         <p>
@@ -93,6 +95,7 @@ export default function Login() {
         </p>
       </form>
 
+    </div>
     </div>
   );
 };
