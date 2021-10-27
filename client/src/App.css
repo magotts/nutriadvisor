@@ -1,5 +1,10 @@
 
-
+.form_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
 body {
   padding: 0;
@@ -29,49 +34,41 @@ nav {
 }
 
 .image-1 {
-  margin: 0em;
-  padding-bottom: 0em;
-  height: 600px;
-  width: 2200px;
+  height: 400px;
+  width: 100%;
 }
 
 .image-2 {
-
-  margin: 1em;
-  padding: 0em;
   height: 300px;
-  width: 670px;
+  width: 550px;
+  padding:1em;
 }
 
 .image-3 {
-  margin-right: 1em;
-  padding: 0em;
   height: 300px;
-  width: 660px;
+  width: 550px;
+  padding:1em;
 }
 
 .image-4{
-  margin-right: 0em;
-  padding: 0em;
   height: 300px;
-  width: 670px;
-}
-
-
-.Bothimages{
-  font-family: 'Times New Roman', Times, serif;
-  display: flex;
-   flex-direction: row;
-    padding: 1em;
-    height: 460px;
-    width: 700px;
-    justify-content: space-between;
-
+  width: 550px;
+  padding:1em;
 }
 
 .heading{
   display: flex;
   justify-content: center;
+}
+
+.Bothimages{
+  font-family: 'Times New Roman', Times, serif;
+  display: flex;
+  flex-direction: row;
+  height: 460px;
+  width: auto;
+  justify-content: center;
+
 }
 
 .parallax {
@@ -118,4 +115,9 @@ nav {
   }
 }
 
-
+.images-home {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding:1em;
+}

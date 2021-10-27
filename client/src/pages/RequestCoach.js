@@ -14,3 +14,5 @@ function RequestCoach() {
 }
 
 export default RequestCoach;
+
+// search the coaches table for all coaches whose goals match the goals of a specified user's id

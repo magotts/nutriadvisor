@@ -11,7 +11,7 @@ function Food_Diary() {
 
   const deleteFood = async (id) => {
     try {
-      const deleteFood = await fetch(`http://localhost:3000/food_diary/${id}`, {
+      const deleteFood = await fetch(`http://localhost:5000/food_diary/${id}`, {
         method: "DELETE"
       });
      setFoods(foods.filter(food => food.id !== id));
@@ -22,7 +22,7 @@ function Food_Diary() {
   }
   const getFood = async () => {
     try {
-      const response = await fetch("http://localhost:3000/food_diary");
+      const response = await fetch("http://localhost:5000/food_diary");
       const jsonData = await response.json();
       setFoods(jsonData);
     }
@@ -39,7 +39,7 @@ function Food_Diary() {
     event.preventDefault();
     try {
       const body = { breakfast, lunch, dinner, snacks };
-      const response = await fetch("http://localhost:3000/food_diary", {
+      const response = await fetch("http://localhost:5000/food_diary", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(body)
@@ -61,7 +61,7 @@ function Food_Diary() {
   return (
     <>
     <div>
-      <div >
+      <div className="form_center">
         <h1>Food Diary</h1>
         <form onSubmit={onSubmitForm}>
           Breakfast:<input class="breakfast" type="text" value={breakfast} onChange={ event => setBreakfast(event.target.value)}/><br/>

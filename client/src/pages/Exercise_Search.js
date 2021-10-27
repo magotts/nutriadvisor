@@ -58,7 +58,7 @@ const onSubmit = (event) => {
 };
 
   return (
-    <div>
+    <div className="form_center">
       <h1>Exercise Search</h1>
       <form onSubmit={onSubmit}>
         {alert !== "" && <Alert alert={alert} />}
