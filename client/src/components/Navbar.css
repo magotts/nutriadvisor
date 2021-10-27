@@ -4,7 +4,7 @@
   background-color: #6bd1fa;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 .navlogin {
   display: flex;
@@ -20,7 +20,7 @@
   height: 100%;
   display: flex;
   align-items: center;
-  padding-left: 150px;
+  justify-content: flex-start;
 }
 
 .nav-img {
