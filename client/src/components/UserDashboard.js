@@ -1,7 +1,13 @@
 import React, {useState, useEffect} from "react";
 import "../App.css";
 import Sidebar from "../components/Sidebar";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Food_Diary from "../pages/Food_Diary";
+import Biometrics from "../pages/Biometrics";
+import Food_Search from "../pages/Food_Search";
+import Chat from "../components/Chat";
 
+import Exercise_Search from "../pages/Exercise_Search";
 
 
 export default function UserDashboard() {  
@@ -39,9 +45,25 @@ export default function UserDashboard() {
       <li className="userdashboard-li"><a className="userdashboard-li a" href="/">News</a></li>
     </ul> */}
 
-    <Sidebar />
+        <Router>
+
+         {/* When user is logged in, show the sidebar page in UserDashboard */}
+
+       <Sidebar/>
+        <div className="sidebarcontainer">
+
+        <Switch>
+          <Route path="/biometrics" exact component={Biometrics} />
+          <Route path="/food_diary" exact component={Food_Diary} />
+          <Route path="/food_search" exact component={Food_Search} />
+          <Route path="/exercise_search" exact component={Exercise_Search} />
+        </Switch>
+      
+        </div>
+    
+      </Router>
+    
+ 
     </>
-
-
     );
 }
