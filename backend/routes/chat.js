@@ -4,7 +4,7 @@ const router = express.Router();
 const chatRouter = (http) => {
   const io = require("socket.io")(http, {
     cors: {
-      origin: ["http://localhost:8000"],
+      origin: ["http://localhost:3000"],
     },
   })
 
