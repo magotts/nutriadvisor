@@ -1,5 +1,9 @@
-.App {
-  text-align: center;
+
+.form_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 body {
@@ -22,4 +26,98 @@ nav {
   align-items: center;
   list-style: none;
 
+}
+
+.Logo {
+  height: 25px;
+  background-image: url("https://thecafesucrefarine.com/wp-content/uploads/2021/07/Watermelon-Arugula-Salad-with-Pepper-Jelly-Dressing-2.jpg");
+}
+
+.image-1 {
+  height: 400px;
+  width: 100%;
+}
+
+.image-2 {
+  height: 300px;
+  width: 550px;
+  padding:1em;
+}
+
+.image-3 {
+  height: 300px;
+  width: 550px;
+  padding:1em;
+}
+
+.image-4{
+  height: 300px;
+  width: 550px;
+  padding:1em;
+}
+
+.heading{
+  display: flex;
+  justify-content: center;
+}
+
+.Bothimages{
+  font-family: 'Times New Roman', Times, serif;
+  display: flex;
+  flex-direction: row;
+  height: 460px;
+  width: auto;
+  justify-content: center;
+
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466__480.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+@media only screen and (max-device-width: 1300px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+
+@media all and (min-width: 480px) {
+  .Login {
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    
+  }
+
+  .userregisteration {
+   
+    font-size: xx-large;
+    margin-bottom: 1em;
+  }
+
+  .Login form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}
+
+.images-home {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding:1em;
 }

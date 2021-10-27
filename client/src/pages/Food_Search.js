@@ -65,7 +65,7 @@ const Food_Search = () => {
   };
 
   return (
-    <div>
+    <div className="form_center">
     <h1>Food Search</h1>
     <form onSubmit={onSubmit}>
       {alert !== "" && <FoodAlert alert={alert} />}
@@ -79,7 +79,7 @@ const Food_Search = () => {
       <input type="submit" value="Search Food"/>
     </form>
     <div>
-      {foods !== [] && foods.map( foods => <Foods foods = {foods} />)}
+      {foods !== [] && foods.map( (foods, i) => <Foods key={i} foods = {foods} />)}
     </div>
 
     {/* <div>

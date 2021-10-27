@@ -1,4 +1,5 @@
 import './App.css';
+import './Login.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,6 +16,8 @@ import Biometrics from "./pages/Biometrics";
 import Food_Search from "./pages/Food_Search";
 import Chat from "./components/Chat";
 
+import Exercise_Search from "./pages/Exercise_Search";
+import RequestCoach from './pages/RequestCoach';
 
 
 function App() {
@@ -32,6 +35,8 @@ function App() {
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Register} />
           <Route path="/food_search" exact component={Food_Search} />
+          <Route path="/exercise_search" exact component={Exercise_Search} />
+          <Route path="/requestcoach" exact component={RequestCoach} />
         </Switch>
         <Chat />
     
