@@ -19,13 +19,6 @@ CREATE TABLE users (
   date_joined TIMESTAMP DEFAULT NOW()
 );
 
-CREATE TABLE coaches (
-  id SERIAL PRIMARY KEY NOT NULL,
-  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE RESTRICT,
-  alias VARCHAR(255) NOT NULL,
-  goaltype_id INTEGER NOT NULL REFERENCES goaltypes(id) ON DELETE CASCADE,
-  created TIMESTAMP DEFAULT NOW()
-);
 
 CREATE TABLE biometrics (
   id SERIAL PRIMARY KEY NOT NULL,
@@ -35,19 +28,12 @@ CREATE TABLE biometrics (
   date_created TIMESTAMP DEFAULT NOW()
 );
 
-CREATE TABLE goals (
-  id SERIAL PRIMARY KEY NOT NULL,
-  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-  goaltype_id INTEGER NOT NULL REFERENCES goaltypes(id) ON DELETE CASCADE
-);
-
 -- goals and specialties think of a better name
 
 CREATE TABLE goaltypes (
   id SERIAL PRIMARY KEY NOT NULL,
   description VARCHAR(255) NOT NULL
 );
-
 
 CREATE TABLE food_diary (
   id SERIAL PRIMARY KEY NOT NULL,
@@ -57,6 +43,22 @@ CREATE TABLE food_diary (
   dinner VARCHAR(255) NOT NULL,
   snacks VARCHAR(255) NOT NULL,
   date_created TIMESTAMP DEFAULT NOW()
+);
+
+CREATE TABLE coaches (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE RESTRICT,
+  alias VARCHAR(255) NOT NULL,
+  goaltype_id INTEGER NOT NULL REFERENCES goaltypes(id) ON DELETE CASCADE,
+  created TIMESTAMP DEFAULT NOW()
+);
+
+
+CREATE TABLE goals (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  coach_id INTEGER NOT NULL REFERENCES coaches(id) ON DELETE CASCADE,
+  goaltype_id INTEGER NOT NULL REFERENCES goaltypes(id) ON DELETE CASCADE
 );
 
 -- CREATE TABLE messages (
