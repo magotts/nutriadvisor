@@ -215,3 +215,7 @@ background-color:cadetblue;
   align-items: center;
   font-size: large;
 }
+
+.sidebarmain {
+  display: flex;
+}

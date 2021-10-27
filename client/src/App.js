@@ -31,10 +31,10 @@ function App() {
     <div className="App">
       <Router>
         <Navbar/>
-
          {/* When user is logged in, show the sidebar page in UserDashboard */}
-        {/* <Sidebar /> 
-        <div className="sidebarcontainer"> */}
+        <main className="sidebarmain"> 
+          <section>{auth && <Sidebar/>} </section>
+        <section>
         <Switch>
         <Route path="/" exact component={Home} />
           <Route path="/about" exact component={About} />
@@ -47,11 +47,11 @@ function App() {
           <Route path="/requestcoach" exact component={RequestCoach} />
           <Route path="/userdashboard" exact component={UserDashboard} />
         </Switch>
-        {/* </div> */}
-       
-        {auth && <> 
+        </section>
+       </main>
+        {auth && 
    <Chat /> 
-        </>}
+       }
     
       </Router>
      

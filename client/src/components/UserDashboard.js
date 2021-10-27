@@ -45,23 +45,12 @@ export default function UserDashboard() {
       <li className="userdashboard-li"><a className="userdashboard-li a" href="/">News</a></li>
     </ul> */}
 
-        <Router>
 
          {/* When user is logged in, show the sidebar page in UserDashboard */}
 
-       <Sidebar/>
         <div className="sidebarcontainer">
-
-        <Switch>
-          <Route path="/biometrics" exact component={Biometrics} />
-          <Route path="/food_diary" exact component={Food_Diary} />
-          <Route path="/food_search" exact component={Food_Search} />
-          <Route path="/exercise_search" exact component={Exercise_Search} />
-        </Switch>
       
         </div>
-    
-      </Router>
     
  
     </>
