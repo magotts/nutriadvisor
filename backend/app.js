@@ -16,6 +16,7 @@ const loginRouter = require('./routes/login');
 const biometricsRouter = require('./routes/biometrics');
 const chatRouter = require('./routes/chat');
 const userchatRouter = require('./routes/userchat');
+const userdashboardRouter = require('./routes/userdashboard');
 
 
 
@@ -44,6 +45,7 @@ app.use('/login', loginRouter(db));
 app.use('/biometrics', biometricsRouter(db));
 app.use('/chat', chatRouter(http));
 app.use('/userchat', userchatRouter(db));
+app.use('/userdashboard', userdashboardRouter(db));
 
 
 // logout
