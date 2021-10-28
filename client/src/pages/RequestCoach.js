@@ -77,6 +77,7 @@ function RequestCoach() {
     axios
       .get(`http://localhost:5000/requestcoach/coach/${goalId}`)
       .then((res) => {
+        console.log("look", res.data)
         setCoaches(res.data);
       });
   }, [goalId]);
@@ -95,7 +96,7 @@ function RequestCoach() {
   ));
 
   // const getCoachById() {
-
+  //   setCoaches
   // } 
   // const coach = getCoachById(assignedCoach);
 
@@ -147,7 +148,10 @@ function RequestCoach() {
             <select
               value={coachName}
               onChange={(event) => {
-                setCoachName(event.target.value);
+                console.log(coaches, event.target.value)
+                let coach = coaches.find(coach => coach.id == event.target.value)
+                if (coach) {coach = coach.alias} else {coach = ''}
+                setCoachName(coach)
               }}
             >
               {/* dropdown will have the goaltypes (select * from goaltypes)  */}
@@ -157,7 +161,7 @@ function RequestCoach() {
               {coachOptions}
             </select>
             <br />
-            <button onClick={assignCoach}>Select this Coach</button>
+            {/* <button onClick={assignCoach}>Select this Coach</button> */}
             <br />
        
         </section>
@@ -168,7 +172,7 @@ function RequestCoach() {
        <section>
         Congrats!
         <br />
-        {/* You are assigned to {coach.alias}. /* {coach.alias} */}
+        You are assigned to {coachName}
       </section> 
     </>
   );
