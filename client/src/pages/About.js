@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 function About() {
   return (
     <div>
-      <div >
-        <h1 class="heading">About NutriAdvisor</h1><br />
+      <div className="aboutdiv">
+        <h1 className="heading">About NutriAdvisor</h1><br />
         <div className="Bothimages"><img src="https://www.aipt.edu.au/sites/default/files/Creating%20a%20Diet%20Plan.jpg"></img><br />
           <img src="https://www.aipt.edu.au/sites/default/files/Studying%20to%20Be%20a%20Nutrition%20Advisor.jpg"></img></div><br/><br /><br/>
 

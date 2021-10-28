@@ -23,6 +23,7 @@ import RequestCoach from './pages/RequestCoach';
 
 import { authContext } from "./providers/AuthProvider";
 import { useContext } from 'react';
+import { display } from '@mui/system';
 
 function App() {
 
@@ -32,7 +33,7 @@ function App() {
       <Router>
         <Navbar/>
          {/* When user is logged in, show the sidebar page in UserDashboard */}
-        <main> 
+        <main style= {{display: "flex"}}> 
           <section>{auth && ['/userdashboard', '/food_diary', '/biometrics', '/food_search', '/exercise_search'].find(el => el === window.location.pathname) && <Sidebar/>} </section>
         <section>
         <Switch>
