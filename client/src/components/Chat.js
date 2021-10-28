@@ -46,7 +46,7 @@ function Chat() {
     // console.log(`New message incoming! ${newMessage}`);
    // socket.emit("send-message", `${userInfo[0].first_name}: ${newMessage}`);
     // Now send the message throught the backend API
-    addResponseMessage("Hi there!");
+    addResponseMessage("Hello! Your coach will be available shortly.");
  
   };
 
