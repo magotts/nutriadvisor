@@ -1,9 +1,9 @@
 INSERT INTO users(first_name, last_name, email, password, gender, age, height) 
 VALUES 
-('Diana', 'Prince', 'hello@world.com', 'password', 'female', '30', '60'),
-('Yi Rong', 'Qin', 'hi@yahoo.com', 'password', 'female', '25', '55'),
-('Sonam', 'Malhotra',  'heyhey@hey.com', 'password', 'female', '20', '50'),
-('Yvette', 'Lim',  'a@a.com', 'password', 'female', '23', '45');
+('Diana', 'Prince', 'hello@world.com', 'password', 'Female', '30', '60'),
+('Yi Rong', 'Qin', 'hi@yahoo.com', 'password', 'Female', '25', '55'),
+('Sonam', 'Malhotra',  'heyhey@hey.com', 'password', 'Female', '20', '50'),
+('Yvette', 'Lim',  'a@a.com', 'password', 'Female', '23', '45');
 -- ('Coach Blake', 'Lively', true, 'coach@coach.com', 'password', 'female', '35', '65');
 
 INSERT INTO goaltypes(description) 
