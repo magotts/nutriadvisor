@@ -37,6 +37,7 @@ function App() {
          {/* When user is logged in, show the sidebar page in UserDashboard */}
         <main> 
           <section>{auth && ['/userdashboard','/userprofile', '/food_diary', '/biometrics', '/food_search', '/exercise_search'].find(el => el === window.location.pathname) && <Sidebar/>} </section>
+          {/* <section>{auth && ['/userprofile', '/food_diary', '/biometrics', '/food_search', '/exercise_search'].find(el => el === window.location.pathname) && <Sidebar/>} </section> */}
         <section>
         <Switch>
         <Route path="/" exact component={Home} />

@@ -3,6 +3,8 @@ import { Table } from 'react-bootstrap';
 
 import Edit from "../components/EditFood";
 import '../styles/food.css';
+import Sidebar from "../components/Sidebar";
+
 
 
 function Food_Diary() {
@@ -60,7 +62,8 @@ function Food_Diary() {
 
   return (
     <>
-    <div>
+    <div className="container">
+      <Sidebar />
       <div className="table">
         <h1>Food Diary</h1>
         <form className="form-center" onSubmit={onSubmitForm}>

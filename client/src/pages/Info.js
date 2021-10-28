@@ -8,7 +8,7 @@ export default function Info() {
   return (
     <div>
       <p className="UserInfo">
-        <div>You are logged in </div>
+        <div>Logged in as </div>
         <div>{user.name}</div>
       </p >
       <p>

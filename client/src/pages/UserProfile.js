@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Table } from 'react-bootstrap';
-import axios from "axios";
+import Sidebar from "../components/Sidebar";
+
 
 function UserProfile() {
   const [userInfo, setUserInfo] = useState([1]);
@@ -32,7 +33,12 @@ function UserProfile() {
 
 
   return (
-   
+    <div style={{
+      display: "flex",
+      padding: 0,
+      margin: 0
+    }}>
+      <Sidebar />
  
       <div className="form_center">
       <h2> User Information  </h2>
@@ -61,6 +67,7 @@ function UserProfile() {
           </thead>
          
           </Table>
+        </div>
         </div>
 
      

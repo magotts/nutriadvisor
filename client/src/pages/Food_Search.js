@@ -65,7 +65,7 @@ const Food_Search = () => {
   };
 
   return (
-    <div className="form_center" >
+    <div className="form_center">
     <h1>Food Search</h1>
     <form onSubmit={onSubmit}>
       {alert !== "" && <FoodAlert alert={alert} />}
