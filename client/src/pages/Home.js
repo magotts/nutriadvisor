@@ -15,6 +15,8 @@ function Home() {
      <img className="image-2" src ="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"></img>
      </div>
     </div>
+
+   
   );
 }
 

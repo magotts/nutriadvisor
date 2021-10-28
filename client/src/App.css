@@ -17,7 +17,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background: #94c751;
+  background: #c4dfa1;
 }
 
 .nav-links {
@@ -36,24 +36,25 @@ nav {
 
 .image-1 {
   height: 490px;
-  width: 100%;
+  width: 160%;
+  
 }
 
 .image-2 {
   height: 320px;
-  width: 40%;
+  width: 50%;
   padding:1em;
 }
 
 .image-3 {
   height: 320px;
-  width: 40%;
+  width: 50%;
   padding:1em;
 }
 
 .image-4{
   height: 320px;
-  width: 40%;
+  width: 50%;
   padding:1em;
 }
 
