@@ -54,6 +54,10 @@ function UserProfile() {
             <th>Height (inch):</th>
             <td><span name="height">{userInfo[0].height}</span></td>
           </tr>
+          <tr>
+            <th>Assigned Coach:</th>
+            <td><span name="height">Coach Blake</span></td>
+          </tr>
           </thead>
          
           </Table>
