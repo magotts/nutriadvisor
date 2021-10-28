@@ -14,11 +14,6 @@ export const SidebarData = [
     link: "/userprofile"
   },
   { 
-    title: "User Dashboard",
-    icon: <ArtTrackIcon />,
-    link: "/userdashboard"
-  },
-  { 
     title: "Food Diary",
     icon: <MenuBookIcon />,
     link: "/food_diary"
