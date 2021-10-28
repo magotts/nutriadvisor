@@ -4,17 +4,14 @@ import FoodBankIcon from '@mui/icons-material/FoodBank';
 import CalculateIcon from '@mui/icons-material/Calculate';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
+import ArtTrackIcon from '@mui/icons-material/ArtTrack';
 
 export const SidebarData = [ 
-  { 
-    title: "Home",
-    icon: <HomeIcon />,
-    link: "/"
-  },
+  
   { 
     title: "User Profile",
     icon: <AccountCircleIcon />,
-    link: "/userdashboard"
+    link: "/userprofile"
   },
   { 
     title: "Food Diary",

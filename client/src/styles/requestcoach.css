@@ -1,0 +1,28 @@
+.title {
+  padding-top:50px;
+}
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.select {
+  padding-left:100px;
+}
+
+.img-coach {
+  border: 5px solid #000000;
+  border-radius: 150px;
+  width: 300px;
+  height: 300px;
+}
+
+h1 {
+  text-align: center;
+}
+
+
+h4 {
+  text-align: center;
+}

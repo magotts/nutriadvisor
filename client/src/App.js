@@ -20,9 +20,12 @@ import Sidebar from "./components/Sidebar"
 
 import Exercise_Search from "./pages/Exercise_Search";
 import RequestCoach from './pages/RequestCoach';
+import UserProfile from './pages/UserProfile';
+
 
 import { authContext } from "./providers/AuthProvider";
 import { useContext } from 'react';
+import { display } from '@mui/system';
 
 function App() {
 
@@ -32,8 +35,8 @@ function App() {
       <Router>
         <Navbar/>
          {/* When user is logged in, show the sidebar page in UserDashboard */}
-        <main className="sidebarmain"> 
-          <section>{auth && <Sidebar/>} </section>
+        <main style= {{display: "flex"}}> 
+          <section>{auth && ['/userdashboard','/userprofile', '/food_diary', '/biometrics', '/food_search', '/exercise_search'].find(el => el === window.location.pathname) && <Sidebar/>} </section>
         <section>
         <Switch>
         <Route path="/" exact component={Home} />
@@ -46,6 +49,7 @@ function App() {
           <Route path="/exercise_search" exact component={Exercise_Search} />
           <Route path="/requestcoach" exact component={RequestCoach} />
           <Route path="/userdashboard" exact component={UserDashboard} />
+          <Route path="/userprofile" exact component={UserProfile} />
         </Switch>
         </section>
        </main>

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import { Table } from 'react-bootstrap';
 
 import Edit from "../components/EditFood";
-import '../pages/food.css';
+import '../styles/food.css';
 
 
 function Food_Diary() {
@@ -61,9 +61,9 @@ function Food_Diary() {
   return (
     <>
     <div>
-      <div className="form_center">
+      <div className="table">
         <h1>Food Diary</h1>
-        <form onSubmit={onSubmitForm}>
+        <form className="form-center" onSubmit={onSubmitForm}>
           Breakfast:<input class="breakfast" type="text" value={breakfast} onChange={ event => setBreakfast(event.target.value)}/><br/>
           Lunch:<input type="text" value={lunch} onChange={ event => setLunch(event.target.value)}/><br/>
           Dinner:<input type="text" value={dinner} onChange={ event => setDinner(event.target.value)}/><br/>
