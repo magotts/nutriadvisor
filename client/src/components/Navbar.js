@@ -25,15 +25,9 @@ export default function Navbar(props) {
         <Link to="/food_search"> Food Search </Link>
         <Link to="/exercise_search"> Exercise Search </Link>
         {!auth && <> <Link to="/login"> Login </Link> <Link to="/register"> Register </Link> </>}
-        {auth && <> <Info logout={null} user={user}  />
-        <Link to="/userdashboard"> Dashboard </Link>
+        {auth && <> <Link to="/userdashboard"> Dashboard </Link><Info logout={null} user={user}  />
         <button type="button" onClick={null}>Log Out</button>
-
-        </>
-}               
-
-         
-        <Link to="/requestcoach"> RequestCoach </Link>
+        </> }                        
       </div>
     </div>
     );

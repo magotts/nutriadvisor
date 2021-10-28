@@ -5,6 +5,7 @@ import CalculateIcon from '@mui/icons-material/Calculate';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import ArtTrackIcon from '@mui/icons-material/ArtTrack';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
 
 export const SidebarData = [ 
   
@@ -33,4 +34,9 @@ export const SidebarData = [
     icon: <FitnessCenterIcon />,
     link: "/exercise_search"
   },
+  { 
+    title: "Request a Coach",
+    icon: <PersonAddIcon />,
+    link: "/requestcoach"
+  }
 ]

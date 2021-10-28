@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import Exercises from '../components/ExerciseInfo';
 import Alert from '../components/ExerciseAlert';
+import Sidebar from "../components/Sidebar";
+
 
 const Exercise_Search = () => {
   const [query, setQuery] = useState("");
@@ -58,6 +60,12 @@ const onSubmit = (event) => {
 };
 
   return (
+    <div style={{
+      display: "flex",
+      padding: 0,
+      margin: 0
+    }}>
+      <Sidebar />
     <div className="form_center">
       <h1>Exercise Search</h1>
       <form onSubmit={onSubmit}>
@@ -81,6 +89,7 @@ const onSubmit = (event) => {
       </form>
       <div>
       {exercises !== [] && exercises.map( (exercises, i) => <Exercises key={i} exercises={exercises}/>)}
+    </div>
     </div>
     </div>
   )

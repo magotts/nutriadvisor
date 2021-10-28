@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { Table } from 'react-bootstrap';
-
-import Edit from "../components/EditBiometrics";
+import Sidebar from "../components/Sidebar";
 
 
 
@@ -113,7 +112,12 @@ function Biometrics() {
 
   return (
     <>
-    <div>
+    <div style={{
+      display: "flex",
+      padding: 0,
+      margin: 0
+    }}>
+      <Sidebar />
       <div className="form_center">
         
        

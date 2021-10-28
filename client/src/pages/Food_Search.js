@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import axios from 'axios';
 import Foods from "../components/Foods";
 import FoodAlert from "../components/FoodAlert";
+import Sidebar from "../components/Sidebar";
 
 const Food_Search = () => {
   const [query, setQuery] = useState("");
@@ -65,6 +66,12 @@ const Food_Search = () => {
   };
 
   return (
+    <div style={{
+      display: "flex",
+      padding: 0,
+      margin: 0
+    }}>
+      <Sidebar />
     <div className="form_center">
     <h1>Food Search</h1>
     <form onSubmit={onSubmit}>
@@ -97,6 +104,7 @@ const Food_Search = () => {
     <div>
       {SUGAR !== {} && Object.keys(SUGAR).map((key, index)=><h2>{SUGAR[key]}</h2>)}
     </div> */}
+    </div>
     </div>
   );
 }
