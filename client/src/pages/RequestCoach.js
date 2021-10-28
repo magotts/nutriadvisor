@@ -126,6 +126,7 @@ function RequestCoach() {
 
           </form>
         </section>
+        {goalId > 0 &&
 
         <section>
                 <br />
@@ -152,9 +153,9 @@ function RequestCoach() {
             <br />
        
         </section>
-   
+}
        {coachName.length > 0 && <section>
-       {/* <section> */}
+  
         Congrats!
         <br />
         You are assigned to {coachName}
