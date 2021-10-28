@@ -92,7 +92,26 @@ function RequestCoach() {
                 <h4>Select a Coach:</h4>
                 <br />
          
+                <strong>
+              <h4>Choose your coach:</h4>
+            </strong>
             <select
+              value={coachName}
+              onChange={(event) => {
+                let coach = coaches.find(coach => coach.id == event.target.value)
+                if (coach) {coach = coach.alias} else {coach = ''}
+                setCoachName(coach)
+              }}
+            >
+              {/* dropdown will have the goaltypes (select * from goaltypes)  */}
+              <option selected value="choose">
+                Please choose below
+              </option>
+              {coachOptions}
+            </select>
+            <br />
+
+            {/* <select
               value={coachName}
               onChange={(event) => {
                 let coach = coaches.find(coach => coach.id == event.target.value)
@@ -104,7 +123,7 @@ function RequestCoach() {
                 Please choose below
               </option>
               {coachOptions}
-            </select>
+            </select> */}
             <br />
             {/* <button onClick={assignCoach}>Select this Coach</button> */}
             <br />
