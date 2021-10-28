@@ -17,7 +17,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background: #c4dfa1;
+  background: #94c751;
 }
 
 .nav-links {
@@ -36,25 +36,24 @@ nav {
 
 .image-1 {
   height: 490px;
-  width: 160%;
-  
+  width: 100%;
 }
 
 .image-2 {
   height: 320px;
-  width: 50%;
+  width: 40%;
   padding:1em;
 }
 
 .image-3 {
   height: 320px;
-  width: 50%;
+  width: 40%;
   padding:1em;
 }
 
 .image-4{
   height: 320px;
-  width: 50%;
+  width: 40%;
   padding:1em;
 }
 
@@ -187,3 +186,4 @@ userdashboard-li a:hover {
   padding-left:100px;
 
 } */
+
