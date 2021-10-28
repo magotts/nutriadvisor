@@ -1,8 +1,9 @@
 INSERT INTO users(first_name, last_name, email, password, gender, age, height) 
 VALUES 
-('Diana', 'Prince', 'hello@world.com', 'password', 'female', '30', '60'),
-('Yi Rong', 'Qin', 'hi@yahoo.com', 'password', 'female', '25', '55'),
-('Sonam', 'Malhotra',  'heyhey@hey.com', 'password', 'female', '20', '50');
+('Diana', 'Prince', 'hello@world.com', 'password', 'Female', '30', '60'),
+('Yi Rong', 'Qin', 'hi@yahoo.com', 'password', 'Female', '25', '55'),
+('Sonam', 'Malhotra',  'heyhey@hey.com', 'password', 'Female', '20', '50'),
+('Yvette', 'Lim',  'a@a.com', 'password', 'Female', '23', '45');
 -- ('Coach Blake', 'Lively', true, 'coach@coach.com', 'password', 'female', '35', '65');
 
 INSERT INTO goaltypes(description) 
@@ -16,7 +17,9 @@ INSERT INTO coaches(user_id, alias, goaltype_id)
 VALUES
 (1, 'Coach Blake', 1),
 (2, 'Coach Ryan', 2),
-(3, 'Coach Mandy', 3);
+(3, 'Coach Mandy', 3),
+(4, 'Coach Blaire', 4),
+(1, 'Coach Blaire', 1);
 
 -- user 1's goals is to Lose Weight
 INSERT INTO goals(user_id, coach_id, goaltype_id) 

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "../styles/requestcoach.css";
 
 function RequestCoach() {
   // const [userInfo, setUserInfo] = useState([]);
@@ -103,13 +104,13 @@ function RequestCoach() {
   
   return (
     <>
-      <h1>Request a Coach</h1>
-      <main style={{ display: "flex" }}>
-        <section>
+      <div className="title"><h1>Request a Coach</h1></div>
+      <main className="container">
+        <section className="select">
           <form className="form_center" onSubmit={onShowCoaches}>
             <br />
             <strong>
-              <h3>Choose your GOAL:</h3>
+              <h4>Choose your GOAL:</h4>
             </strong>
             <select
               value={goalId}
@@ -125,24 +126,11 @@ function RequestCoach() {
 
           </form>
         </section>
+        {goalId > 0 &&
 
-        {/* <section>
-              Show List of Coaches based on the Goal<br/>
-              Select this coach:<br/>
-              {
-              specificCoach.map(coach => (
-                // <input value={coach.alias} type="radio">{coach.alias}</input>
-               <div> {coach.alias} </div>
-                ))
-             }
-              
-            </section> */}
-
-        <section>
-         
-                Show List of Coaches based on the Goal
+        <section className="select">
                 <br />
-                Select this coach:
+                <h4>Select this coach:</h4>
                 <br />
          
             <select
@@ -165,15 +153,21 @@ function RequestCoach() {
             <br />
        
         </section>
-      </main>
-
-      
-       {/* {coach.id > 0 && <section> */}
-       <section>
-        Congrats!
+}
+       {coachName.length > 0 && <section  className="select">
+  
+        <h1>Congrats!</h1>
         <br />
-        You are assigned to {coachName}
+        <h4>You are assigned to</h4> 
+        <h4>{coachName}</h4>
+        {coachName === "Coach Ryan" && <img className="img-coach" src="https://static.onecms.io/wp-content/uploads/sites/14/2015/11/12/111215-ryan-reynolds-2-2000.jpg" />}
+        {coachName === "Coach Blake" && <img className="img-coach" src="https://pbs.twimg.com/media/E__E6EMVQAcEF15.jpg" />}
+        {coachName === "Coach Mandy" && <img className="img-coach" src="https://media.allure.com/photos/5cbddb761e1ec0d66045523e/3:4/w_1263,h_1684,c_limit/Mandy%20Moore.jpg" />}
+        {coachName === "Coach Blaire" && <img className="img-coach" src="https://media1.popsugar-assets.com/files/thumbor/foVjvLNLLafbcba7eL3fXaQHlp8/0x63:2087x2150/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2020/02/14/821/n/1922398/d53ac18b5e46ea2e06d0a9.40615575_/i/Leighton-Meester.jpg" />}
+        
       </section> 
+}
+      </main>
     </>
   );
 }

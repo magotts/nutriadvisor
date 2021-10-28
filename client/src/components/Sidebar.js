@@ -1,4 +1,6 @@
 import { SidebarData } from "../components/SidebarData";
+import "../styles/sidebar.css";
+
 
 function Sidebar () {
 

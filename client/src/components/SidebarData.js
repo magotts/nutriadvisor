@@ -7,20 +7,11 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import ArtTrackIcon from '@mui/icons-material/ArtTrack';
 
 export const SidebarData = [ 
-  { 
-    title: "Home",
-    icon: <HomeIcon />,
-    link: "/"
-  },
+  
   { 
     title: "User Profile",
     icon: <AccountCircleIcon />,
-    link: "/userdashboard"
-  },
-  { 
-    title: "User Dashboard",
-    icon: <ArtTrackIcon />,
-    link: "/userdashboard"
+    link: "/userprofile"
   },
   { 
     title: "Food Diary",
