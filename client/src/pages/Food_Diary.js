@@ -62,7 +62,7 @@ function Food_Diary() {
 
   return (
     <>
-    <div className="container">
+    <div className="container1">
       <Sidebar />
       <div className="table">
         <h1>Food Diary</h1>
@@ -90,7 +90,7 @@ function Food_Diary() {
   <tbody>
   {foods.map(food => (
      <tr key={food.id}>
-     <td>{food.date_created}</td>
+     <td>{food.date_created.substring(0,10)}</td>
      <td>{food.breakfast}</td>
      <td>{food.lunch}</td>
      <td>{food.dinner}</td>

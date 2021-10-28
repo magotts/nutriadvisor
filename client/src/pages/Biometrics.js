@@ -51,6 +51,7 @@ function Biometrics() {
   const [choice, setChoice] = useState([]);
 
   const onSubmitForm = async (event) => {
+    debugger
     event.preventDefault();
     try {
       const first_name= userInfo[0].first_name;
@@ -59,6 +60,7 @@ function Biometrics() {
       const gender = userInfo[0].gender;
       const calories_per_day = Math.round(calculateCalories(weight, gender, height, age, choice)); 
       const body = { weight, first_name, age, height, gender, calories_per_day};
+      console.log("bodyyyyyy", body);
 
       const response = await fetch("http://localhost:5000/biometrics", {
         method: "POST",
@@ -80,15 +82,17 @@ function Biometrics() {
     console.log("info", userInfo)
   }, []);
 
+
   const calculateCalories = (weight, gender, height, age, choice) => {
     let bmr = 0;
     let calorie = 0;
-    if (gender === "male") {
-      bmr = 66 + (6.3 * weight) + (12.9 * height) - (6.8 * age);
+    debugger
+    if (gender === "Male") {
+      bmr = 66.5 + (13.75 * weight) + (5.003 * height) - (6.755 * age);
     }
 
-    if (gender === "female") {
-      bmr = 655 + (4.3 * weight) + (4.7 * height) - (4.7 * age);
+    if (gender === "Female") {
+      bmr = 655.1 + (9.563 * weight) + (1.850 * height) - (4.676 * age);
     }
 
     if (choice === "sedentary") {
@@ -140,7 +144,7 @@ userInfo.length > 0 &&
       <td><span name="age">{userInfo[0].age}</span></td>
     </tr>
     <tr>
-      <th>Height (inch):</th>
+      <th>Height (cm):</th>
       <td><span name="height">{userInfo[0].height}</span></td>
     </tr>
     </thead>
@@ -151,7 +155,7 @@ userInfo.length > 0 &&
 </span>
 <br/>
           <h3>Get your Daily Calories</h3>
-          <strong>Enter your Weight(lbs):</strong><input type="text" value={weight} onChange={ event => setWeight(event.target.value)}/><br/><br/>
+          <strong>Enter your Weight(kg):</strong><input type="text" value={weight} onChange={ event => setWeight(event.target.value)}/><br/><br/>
      
           <strong>How active are you?</strong> <br/>
           <select value={choice} onChange={(event) => {
@@ -175,7 +179,7 @@ userInfo.length > 0 &&
   <thead>
     <tr>
       <th>Date</th>
-      <th>Weight(lbs)</th>
+      <th>Weight(kg)</th>
       <th>Calories Per Day</th>
 
      
@@ -184,7 +188,7 @@ userInfo.length > 0 &&
   <tbody>
   {biometrics.map(weight => (
      <tr key={weight.id}>
-     <td>{weight.date_created}</td>
+     <td>{weight.date_created.substring(0,10)}</td>
      <td>{weight.weight}</td>
      <td>{weight.calories_per_day}</td>
      <td><button className="btn btn-danger" onClick={()=> deleteBiometrics(weight.id)}>Delete</button></td>

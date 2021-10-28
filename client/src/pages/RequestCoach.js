@@ -23,48 +23,6 @@ function RequestCoach() {
     }
   };
 
-  //when user clicks Show Coaches button, show all coaches under the goal type.
-  const onShowCoaches = async (event) => {
-    event.preventDefault();
-    try {
-      // const goaltype = show from dropdown value
-      // user_id is always 1
-      // coach_id = 1
-      // goaltype_id = 1 get from dropdown value
-      // const body = { goaltype, user_id, coach_id, goaltype_id };
-      // const response = await fetch("http://localhost:5000/requestcoach", {
-      //   method: "POST",
-      //   headers: {"Content-Type": "application/json"},
-      //   // body: JSON.stringify(body)
-      // })
-      // console.log(response)
-      // window.location ="/requestcoach";
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
-
-  //   -- INSERT INTO goals(user_id, coach_id, goaltype_id)
-  // -- VALUES (1, 1, 1);
-  const onSubmitForm = async (event) => {
-    event.preventDefault();
-    try {
-      // const goaltype = show from dropdown value
-      // user_id is always 1
-      // coach_id = 1
-      // goaltype_id = 1 get from dropdown value
-      // const body = { goaltype, user_id, coach_id, goaltype_id };
-      // const response = await fetch("http://localhost:5000/requestcoach", {
-      //   method: "POST",
-      //   headers: {"Content-Type": "application/json"},
-      //   // body: JSON.stringify(body)
-      // })
-      // console.log(response)
-      // window.location ="/requestcoach";
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
 
   const assignCoach = () => { 
       setAssignedCoach(coachName);
@@ -96,11 +54,6 @@ function RequestCoach() {
       {goal.description}
     </option>
   ));
-
-  // const getCoachById() {
-  //   setCoaches
-  // } 
-  // const coach = getCoachById(assignedCoach);
 
   
   return (
@@ -139,7 +92,26 @@ function RequestCoach() {
                 <h4>Select a Coach:</h4>
                 <br />
          
+                <strong>
+              <h4>Choose your coach:</h4>
+            </strong>
             <select
+              value={coachName}
+              onChange={(event) => {
+                let coach = coaches.find(coach => coach.id == event.target.value)
+                if (coach) {coach = coach.alias} else {coach = ''}
+                setCoachName(coach)
+              }}
+            >
+              {/* dropdown will have the goaltypes (select * from goaltypes)  */}
+              <option selected value="choose">
+                Please choose below
+              </option>
+              {coachOptions}
+            </select>
+            <br />
+
+            {/* <select
               value={coachName}
               onChange={(event) => {
                 let coach = coaches.find(coach => coach.id == event.target.value)
@@ -151,7 +123,7 @@ function RequestCoach() {
                 Please choose below
               </option>
               {coachOptions}
-            </select>
+            </select> */}
             <br />
             {/* <button onClick={assignCoach}>Select this Coach</button> */}
             <br />
