@@ -14,7 +14,9 @@ VALUES
 
 INSERT INTO coaches(user_id, alias, goaltype_id)
 VALUES
-(1, 'Coach Blake', 1);
+(1, 'Coach Blake', 1),
+(3, 'Coach Ryan', 2),
+(2, 'Coach Blake', 1);
 
 -- user 1's goals is to Lose Weight
 INSERT INTO goals(user_id, coach_id, goaltype_id) 
