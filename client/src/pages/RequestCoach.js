@@ -23,48 +23,6 @@ function RequestCoach() {
     }
   };
 
-  //when user clicks Show Coaches button, show all coaches under the goal type.
-  const onShowCoaches = async (event) => {
-    event.preventDefault();
-    try {
-      // const goaltype = show from dropdown value
-      // user_id is always 1
-      // coach_id = 1
-      // goaltype_id = 1 get from dropdown value
-      // const body = { goaltype, user_id, coach_id, goaltype_id };
-      // const response = await fetch("http://localhost:5000/requestcoach", {
-      //   method: "POST",
-      //   headers: {"Content-Type": "application/json"},
-      //   // body: JSON.stringify(body)
-      // })
-      // console.log(response)
-      // window.location ="/requestcoach";
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
-
-  //   -- INSERT INTO goals(user_id, coach_id, goaltype_id)
-  // -- VALUES (1, 1, 1);
-  const onSubmitForm = async (event) => {
-    event.preventDefault();
-    try {
-      // const goaltype = show from dropdown value
-      // user_id is always 1
-      // coach_id = 1
-      // goaltype_id = 1 get from dropdown value
-      // const body = { goaltype, user_id, coach_id, goaltype_id };
-      // const response = await fetch("http://localhost:5000/requestcoach", {
-      //   method: "POST",
-      //   headers: {"Content-Type": "application/json"},
-      //   // body: JSON.stringify(body)
-      // })
-      // console.log(response)
-      // window.location ="/requestcoach";
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
 
   const assignCoach = () => { 
       setAssignedCoach(coachName);
@@ -96,11 +54,6 @@ function RequestCoach() {
       {goal.description}
     </option>
   ));
-
-  // const getCoachById() {
-  //   setCoaches
-  // } 
-  // const coach = getCoachById(assignedCoach);
 
   
   return (

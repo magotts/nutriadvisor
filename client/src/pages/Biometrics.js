@@ -123,7 +123,7 @@ function Biometrics() {
        
         <form onSubmit={onSubmitForm}>
     
-    <span style={{ display:"none" }}>
+    {/* <span style={{ display:"none" }}> */}
 { 
 userInfo.length > 0 && 
 <>
@@ -148,7 +148,7 @@ userInfo.length > 0 &&
         </Table>
         </>
 }
-</span>
+{/* </span> */}
 <br/>
           <h3>Get your Daily Calories</h3>
           <strong>Enter your Weight(lbs):</strong><input type="text" value={weight} onChange={ event => setWeight(event.target.value)}/><br/><br/>
