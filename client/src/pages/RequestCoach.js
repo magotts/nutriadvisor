@@ -104,7 +104,7 @@ function RequestCoach() {
   
   return (
     <>
-      <h1>Request a Coach</h1>
+      <div className="title"><h1>Request a Coach</h1></div>
       <main className="container">
         <section className="select">
           <form className="form_center" onSubmit={onShowCoaches}>
