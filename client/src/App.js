@@ -35,7 +35,7 @@ function App() {
       <Router>
         <Navbar/>
          {/* When user is logged in, show the sidebar page in UserDashboard */}
-        <main style= {{display: "flex"}}> 
+        <main> 
           <section>{auth && ['/userdashboard','/userprofile', '/food_diary', '/biometrics', '/food_search', '/exercise_search'].find(el => el === window.location.pathname) && <Sidebar/>} </section>
         <section>
         <Switch>
