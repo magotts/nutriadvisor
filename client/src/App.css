@@ -76,7 +76,8 @@ nav {
   background-image: url("https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466__480.jpg");
 
   /* Full height */
-  height: 100%; 
+  height: 100%;
+  width: 100%;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -119,6 +120,7 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  overflow: auto;
   padding:1em;
 }
 

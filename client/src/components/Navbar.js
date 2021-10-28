@@ -22,13 +22,12 @@ export default function Navbar(props) {
       <div className="rightSide">
         <Link to="/"> Home </Link>
         <Link to="/about"> About </Link>
-        <Link to="/food_diary"> Food Diary </Link>
-        <Link to="/biometrics"> Biometrics </Link>
         <Link to="/food_search"> Food Search </Link>
         <Link to="/exercise_search"> Exercise Search </Link>
         {!auth && <> <Link to="/login"> Login </Link> <Link to="/register"> Register </Link> </>}
-        {auth && <> <Info logout={logout} user={user}  />         
-        <button type="button" onClick={logout}>Log Out</button>
+        {auth && <> <Info logout={null} user={user}  />
+        <Link to="/userdashboard"> Dashboard </Link>
+        <button type="button" onClick={null}>Log Out</button>
 
         </>
 }               
