@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "../styles/requestcoach.css";
 
 function RequestCoach() {
   // const [userInfo, setUserInfo] = useState([]);
@@ -104,7 +105,7 @@ function RequestCoach() {
   return (
     <>
       <h1>Request a Coach</h1>
-      <main style={{ display: "flex" }}>
+      <main className="container">
         <section>
           <form className="form_center" onSubmit={onShowCoaches}>
             <br />
@@ -126,23 +127,9 @@ function RequestCoach() {
           </form>
         </section>
 
-        {/* <section>
-              Show List of Coaches based on the Goal<br/>
-              Select this coach:<br/>
-              {
-              specificCoach.map(coach => (
-                // <input value={coach.alias} type="radio">{coach.alias}</input>
-               <div> {coach.alias} </div>
-                ))
-             }
-              
-            </section> */}
-
         <section>
-         
-                Show List of Coaches based on the Goal
                 <br />
-                Select this coach:
+                <h2>Select this coach:</h2>
                 <br />
          
             <select
@@ -165,15 +152,15 @@ function RequestCoach() {
             <br />
        
         </section>
-      </main>
-
-      
-       {/* {coach.id > 0 && <section> */}
-       <section>
+   
+       {coachName.length > 0 && <section>
+       {/* <section> */}
         Congrats!
         <br />
         You are assigned to {coachName}
       </section> 
+}
+      </main>
     </>
   );
 }

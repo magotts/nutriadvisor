@@ -44,8 +44,9 @@ function Chat() {
 
   const handleNewUserMessage = (newMessage) => {
     // console.log(`New message incoming! ${newMessage}`);
-    socket.emit("send-message", `${userInfo[0].first_name}: ${newMessage}`);
+   // socket.emit("send-message", `${userInfo[0].first_name}: ${newMessage}`);
     // Now send the message throught the backend API
+    addResponseMessage("Hi there!");
  
   };
 
