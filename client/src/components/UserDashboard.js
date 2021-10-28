@@ -8,7 +8,7 @@ export default function UserDashboard() {
 
   return (
   
-      <Sidebar /> 
+    <div></div>
 
     );
 }
