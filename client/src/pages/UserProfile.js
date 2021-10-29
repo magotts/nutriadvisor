@@ -5,6 +5,7 @@ import Sidebar from "../components/Sidebar";
 
 function UserProfile() {
   const [userInfo, setUserInfo] = useState([1]);
+  const [userGoal, setUserGoal] = useState([1]);
 
   const getUserInfo= async (id) => {
     try {
@@ -18,11 +19,31 @@ function UserProfile() {
       console.error(err.message)
     }
   }
+
+  const getGoalOfUser= async (id) => {
+    try {
+      const response = await fetch(`http://localhost:5000/biometrics/goal/${id}`);
+      const jsonData = await response.json();
+      console.log("json", jsonData)
+      setUserGoal(jsonData);
+      return jsonData;
+    }
+    catch (err) {
+      console.error(err.message)
+    }
+  }
+
+
   useEffect(() => {
-    getUserInfo(1); 
+    getUserInfo(1);
     console.log("info", userInfo)
   }, []);
 
+
+
+  useEffect(() => {
+    getGoalOfUser(1);
+  }, []);
   // useEffect(() => {
   //   axios.get(`http://localhost:5000/biometrics/1`).then((res) => {
   //     console.log("user profile", res.data)
@@ -43,6 +64,7 @@ function UserProfile() {
 
       <div className="form_center">
       <h2> User Information  </h2>
+      {userInfo[0] && <>
       <span name="profile-image"><img className="img-coach" src={userInfo[0].profile_image} /> </span>
       <br/>
           <Table striped bordered hover>
@@ -63,19 +85,25 @@ function UserProfile() {
             <th>Height (cm):</th>
             <td><span name="height">{userInfo[0].height}</span></td>
           </tr>
+          {userGoal[0] && <>
           <tr>
             <th>Goal:</th>
-            <td><span name="goal-description">{userInfo[0].description}</span></td>
+            <td><span name="goal-description">{userGoal[0].description}</span></td>
           </tr>
           <tr>
             <th>Assigned Coach:</th>
-            <td><span name="coach-name">{userInfo[0].alias}</span></td>
+            <td><span name="coach-name">{userGoal[0].alias}</span></td>
           </tr>
+          </>
+          }
           </thead>
          
           </Table>
+          </>
+}
         </div>
         </div>
+       
 
      
     
