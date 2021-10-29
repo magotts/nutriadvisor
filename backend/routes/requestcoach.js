@@ -39,13 +39,13 @@ const requestcoachRouter = (db) => {
     try {
       console.log("reqbody", req.body);
 
-      const { goaltype_id } = req.body;
-      const newCoach = await db.query(
-        `INSERT INTO goals(user_id, coach_id, goaltype_id) VALUES ('1', '1', $1) RETURNING *`,
-        [goaltype_id]
+      const { coachId, goalId  } = req.body;
+      const requestCoach = await db.query(
+        `INSERT INTO goals(user_id, coach_id, goaltype_id) VALUES ('1', $1, $2) RETURNING *`,
+        [coachId, goalId]
       );
 
-      res.json(newCoach.rows[0]);
+      res.json(requestCoach.rows[0]);
     } catch (err) {
       console.error(err.message);
     }

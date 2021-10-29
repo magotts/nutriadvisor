@@ -24,7 +24,6 @@ router.post("/", async (req, res) => {
 
     try {
     const allWeights = await db.query(`SELECT * FROM biometrics where user_id = 1`);
-    console.log("allweight:", allWeights)
     res.json(allWeights.rows);
     
     }
@@ -38,7 +37,8 @@ router.post("/", async (req, res) => {
   router.get("/:id", async (req, res) => {
     try {
     const {id} = req.params;
-    const userInfo = await db.query(`select users.* 
+    const userInfo = await db.query(`
+    select *, biometrics.weight
     from users
     join biometrics on users.id = biometrics.user_id
     where biometrics.user_id = $1`, [id]);
@@ -83,7 +83,7 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   try {
   const {id} = req.params;
-  const deleteBiometrics = await db.query(`DELETE from biometrics WHERE id = $1`, [id]); 
+  const deleteBiometrics = await db.query(`DELETE from biometrics WHERE user_id = $1`, [id]); 
   res.json("Biometrics was deleted.");
 
   }
@@ -91,6 +91,43 @@ router.delete("/:id", async (req, res) => {
     console.error(err.message)
   }
   });
+
+
+     // show user info and their goaltype and coaches of user_id 1
+     router.get("/goal/:id", async (req, res) => {
+      try {
+      const {id} = req.params;
+      const userInfo = await db.query(`
+      select users.*, goals.id, goaltypes.description, coaches.alias
+      from users
+      join biometrics on users.id = biometrics.user_id
+      join goals on users.id = goals.user_id
+      join coaches on coaches.id = goals.coach_id
+      join goaltypes on goaltypes.id = goals.goaltype_id
+      where biometrics.user_id = $1`, [id]);
+      console.log("user info", userInfo)
+      res.json(userInfo.rows);
+      
+      }
+      catch(err) {
+        console.log("error", err);
+        console.error(err.message)
+      }
+      });
+
+      // delete goals of a user
+router.delete("/goal/:id", async (req, res) => {
+  try {
+  const {id} = req.params;
+  const deleteCoach = await db.query(`DELETE from goals WHERE id = $1`, [id]); 
+  res.json("Coach has been fired.");
+
+  }
+  catch(err) {
+    console.error(err.message)
+  }
+  });
+
 
   return router;
 };

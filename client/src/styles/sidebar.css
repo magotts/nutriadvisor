@@ -8,9 +8,9 @@
 } */
 
 .sidebarList {
-width: 100%;
-height: 100%;
-padding: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
 }
 
 .sidebarList .row {
@@ -48,6 +48,6 @@ background-color:rgb(159, 198, 228);
   flex: 70%;
 }
 
-.sidebarcontainer {
+/* .sidebarcontainer {
   margin-left: 300px;
-}
+} */
