@@ -16,7 +16,8 @@ CREATE TABLE users (
   gender VARCHAR(255),
   age INTEGER, 
   height INTEGER,
-  date_joined TIMESTAMP DEFAULT NOW()
+  date_joined TIMESTAMP DEFAULT NOW(),
+  profile_image VARCHAR(255)
 );
 
 
