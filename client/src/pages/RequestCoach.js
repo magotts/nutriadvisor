@@ -1,32 +1,13 @@
-import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../styles/requestcoach.css";
 import Sidebar from "../components/Sidebar";
 
-
 function RequestCoach() {
-  // const [userInfo, setUserInfo] = useState([]);
   const [goalId, setGoalId] = useState(0);
   const [goals, setGoals] = useState([]);
   const [coaches, setCoaches] = useState([]);
-  const [coachName, setCoachName] = useState("");
-  const [assignedCoach, setAssignedCoach] = useState("");
-  
-  const getGoals = async () => {
-    try {
-      const response = await fetch("http://localhost:5000/requestcoach");
-      const jsonData = await response.json();
-      setGoals(jsonData);
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
-
-
-  const assignCoach = () => { 
-      setAssignedCoach(coachName);
-  }
+  const [selectedCoach, setSelectedCoach] = useState(null);
 
   useEffect(() => {
     axios.get(`http://localhost:5000/requestcoach`).then((res) => {
@@ -38,8 +19,11 @@ function RequestCoach() {
     axios
       .get(`http://localhost:5000/requestcoach/coach/${goalId}`)
       .then((res) => {
-        console.log("look", res.data)
+        console.log("look", res.data);
         setCoaches(res.data);
+        if (res.data.length >0 ) {
+          setSelectedCoach(res.data[0].id);
+        }
       });
   }, [goalId]);
 
@@ -55,100 +39,78 @@ function RequestCoach() {
     </option>
   ));
 
-  
+  const selectCoach = (event) => {
+    setSelectedCoach(event.target.value);
+  };
+
+  const theCoach = coaches.find((c) => c.id === selectedCoach);
+
   return (
     <>
-    <div style={{
-      display: "flex",
-      padding: 0,
-      margin: 0
-    }}>
-      <Sidebar />
-      <main className="container">
-        <section className="select">
-          <form className="form_center">
+      <div
+        style={{
+          display: "flex",
+          padding: 0,
+          margin: 0,
+        }}
+      >
+        <Sidebar />
+        <main className="container">
+          <section className="select">
             <br />
             <strong>
-              <h4>Choose your GOAL:</h4>
+              <h4>Choose your goal:</h4>
             </strong>
             <select
               value={goalId}
               onChange={(event) => setGoalId(event.target.value)}
             >
               {/* dropdown will have the goaltypes (select * from goaltypes)  */}
-              <option selected value="choose">
+              <option selected value="choose" disabled>
                 Please choose below
               </option>
               {goalOptions}
             </select>
             <br />
+          </section>
+          {goalId > 0 && theCoach && (
+            <section className="select">
+              <br />
+              <strong>
+                <h4>Choose your coach:</h4>
+              </strong>
+              <select
+                value={theCoach.id}
+                onChange={selectCoach}
+              >
+                {/* dropdown will have the goaltypes (select * from goaltypes)  */}
 
-          </form>
-        </section>
-        {goalId > 0 &&
+                  <option value="choose" disabled>
+                    Please choose below
+                  </option>
 
-        <section className="select">
-                <br />
-                <h4>Select a Coach:</h4>
-                <br />
-         
-                <strong>
-              <h4>Choose your coach:</h4>
-            </strong>
-            <select
-              value={coachName}
-              onChange={(event) => {
-                let coach = coaches.find(coach => coach.id == event.target.value)
-                if (coach) {coach = coach.alias} else {coach = ''}
-                setCoachName(coach)
-              }}
-            >
-              {/* dropdown will have the goaltypes (select * from goaltypes)  */}
-              <option selected value="choose">
-                Please choose below
-              </option>
-              {coachOptions}
-            </select>
-            <br />
+                {coachOptions}
+              </select>
+              <br />
 
-            {/* <select
-              value={coachName}
-              onChange={(event) => {
-                let coach = coaches.find(coach => coach.id == event.target.value)
-                if (coach) {coach = coach.alias} else {coach = ''}
-                setCoachName(coach)
-              }}
-            >
-              <option selected value="choose">
-                Please choose below
-              </option>
-              {coachOptions}
-            </select> */}
-            <br />
-            {/* <button onClick={assignCoach}>Select this Coach</button> */}
-            <br />
-       
-        </section>
-}
-      
-     
-      <br />
-      {coachName.length > 0 && <section  className="select">
-
-  <h1>Congrats!</h1>
-  <br />
-  <h4>You are assigned to</h4> 
-  <h4>{coachName}</h4>
-  <center>{coachName === "Coach Ryan" && <img className="img-coach" src="https://static.onecms.io/wp-content/uploads/sites/14/2015/11/12/111215-ryan-reynolds-2-2000.jpg" />}
-  {coachName === "Coach Blake" && <img className="img-coach" src="https://pbs.twimg.com/media/E__E6EMVQAcEF15.jpg" />}
-  {coachName === "Coach Mandy" && <img className="img-coach" src="https://media.allure.com/photos/5cbddb761e1ec0d66045523e/3:4/w_1263,h_1684,c_limit/Mandy%20Moore.jpg" />}
-  {coachName === "Coach Blaire" && <img className="img-coach" src="https://media1.popsugar-assets.com/files/thumbor/foVjvLNLLafbcba7eL3fXaQHlp8/0x63:2087x2150/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2020/02/14/821/n/1922398/d53ac18b5e46ea2e06d0a9.40615575_/i/Leighton-Meester.jpg" />}</center>
-  
-</section>
-
-}
-</main>
-</div>
+            </section>
+          )}
+          {theCoach && (
+            <section className="select">
+              <h3>Congrats!</h3>
+              <h4>You are assigned to {theCoach.alias}</h4>
+              <h4>{theCoach.alias}</h4>
+              <center>
+                {theCoach.id && (
+                  <div>
+                    <img className="img-coach" src={theCoach.imageurl} />
+                  </div>
+                )}
+              </center>
+            </section>
+          )}
+        </main>
+      </div>
     </>
   );
 }

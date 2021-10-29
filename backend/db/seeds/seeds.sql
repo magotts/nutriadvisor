@@ -13,13 +13,12 @@ VALUES
 ('Gain Weight'),
 ('Healthy Lifestyle');
 
-INSERT INTO coaches(user_id, alias, goaltype_id)
+INSERT INTO coaches(alias, goaltype_id, imageurl)
 VALUES
-(1, 'Coach Blake', 1),
-(2, 'Coach Ryan', 2),
-(3, 'Coach Mandy', 3),
-(4, 'Coach Blaire', 4),
-(1, 'Coach Blaire', 1);
+('Coach Blake', 1, 'https://pbs.twimg.com/media/E__E6EMVQAcEF15.jpg'),
+('Coach Ryan', 2, 'https://static.onecms.io/wp-content/uploads/sites/14/2015/11/12/111215-ryan-reynolds-2-2000.jpg'),
+('Coach Mandy', 3, 'https://media.allure.com/photos/5cbddb761e1ec0d66045523e/3:4/w_1263,h_1684,c_limit/Mandy%20Moore.jpg'),
+('Coach Blaire', 4, 'https://media1.popsugar-assets.com/files/thumbor/foVjvLNLLafbcba7eL3fXaQHlp8/0x63:2087x2150/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2020/02/14/821/n/1922398/d53ac18b5e46ea2e06d0a9.40615575_/i/Leighton-Meester.jpg');
 
 -- user 1's goals is to Lose Weight
 INSERT INTO goals(user_id, coach_id, goaltype_id) 
