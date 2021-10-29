@@ -69,7 +69,7 @@ const Food_Search = () => {
     <div style={{
       display: "flex",
       padding: 0,
-      margin: 0
+      margin: 0,
     }}>
       <Sidebar />
     <div className="form_center">
