@@ -27,6 +27,24 @@ function RequestCoach() {
       });
   }, [goalId]);
 
+//null value in column "coach_id" of relation "goals" violates not-null constraint
+
+  const request = () => {
+    const url = "http://localhost:5000/requestcoach";
+    const params = { 
+      coachId: theCoach.id,
+      goalId: goalId
+    };
+    axios.post(url, params) 
+    .then(res =>  {
+      console.log("request coach", res);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
+
 
   const coachOptions = coaches.map((coach) => (
     <option key={coach.id} value={coach.id}>
@@ -104,7 +122,7 @@ function RequestCoach() {
                   </div>
                 )}
                      <br/>
-          <button>Request for this Coach</button>
+          <button onClick={request()}>Request for this Coach</button>
               </center>
             </section>
           )}
