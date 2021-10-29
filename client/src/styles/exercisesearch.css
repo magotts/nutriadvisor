@@ -1,0 +1,16 @@
+.excercise {
+  
+  justify-content: space-between;
+}
+
+.excerciseinfo {
+  background-color: gainsboro;
+}
+
+.excercisetype{
+  margin-left: 1em;
+  padding:1em;
+  justify-content: center;
+  background-color: rgb(200, 200, 200);
+  margin-top: 2em;
+}
