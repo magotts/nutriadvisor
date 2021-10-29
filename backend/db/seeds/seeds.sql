@@ -21,9 +21,9 @@ VALUES
 ('Coach Blaire', 4, 'https://media1.popsugar-assets.com/files/thumbor/foVjvLNLLafbcba7eL3fXaQHlp8/0x63:2087x2150/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2020/02/14/821/n/1922398/d53ac18b5e46ea2e06d0a9.40615575_/i/Leighton-Meester.jpg');
 
 -- user 1's goals is to Lose Weight
-INSERT INTO goals(user_id, coach_id, goaltype_id) 
-VALUES
-(1, 1, 1);
+-- INSERT INTO goals(user_id, coach_id, goaltype_id) 
+-- VALUES
+-- (1, 1, 1);
 
 
 
