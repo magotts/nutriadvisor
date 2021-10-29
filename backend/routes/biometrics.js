@@ -38,12 +38,9 @@ router.post("/", async (req, res) => {
     try {
     const {id} = req.params;
     const userInfo = await db.query(`
-    select users.*, goaltypes.description, coaches.alias
+    select *, biometrics.weight
     from users
     join biometrics on users.id = biometrics.user_id
-    join goals on users.id = goals.user_id
-    join coaches on coaches.id = goals.coach_id
-    join goaltypes on goaltypes.id = goals.goaltype_id
     where biometrics.user_id = $1`, [id]);
     console.log("user info", userInfo)
     res.json(userInfo.rows);
@@ -94,6 +91,31 @@ router.delete("/:id", async (req, res) => {
     console.error(err.message)
   }
   });
+
+
+     // show user info and their goaltype and coaches of user_id 1
+     router.get("/goal/:id", async (req, res) => {
+      try {
+      const {id} = req.params;
+      const userInfo = await db.query(`
+      select users.*, goaltypes.description, coaches.alias
+      from users
+      join biometrics on users.id = biometrics.user_id
+      join goals on users.id = goals.user_id
+      join coaches on coaches.id = goals.coach_id
+      join goaltypes on goaltypes.id = goals.goaltype_id
+      where biometrics.user_id = $1`, [id]);
+      console.log("user info", userInfo)
+      res.json(userInfo.rows);
+      
+      }
+      catch(err) {
+        console.log("error", err);
+        console.error(err.message)
+      }
+      });
+
+
 
   return router;
 };
