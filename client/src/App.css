@@ -1,10 +1,10 @@
 
 .form_center {
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  padding-top: 2em;
   align-items: center;
   flex-direction: column;
-  padding-left: 100px;
 }
 
 body {
