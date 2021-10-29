@@ -21,12 +21,11 @@ function RequestCoach() {
       .then((res) => {
         console.log("look", res.data);
         setCoaches(res.data);
-        if (res.data.length >0 ) {
+        if (res.data.length > 0) {
           setSelectedCoach(res.data[0].id);
         }
       });
   }, [goalId]);
-
 
   const coachOptions = coaches.map((coach) => (
     <option key={coach.id} value={coach.id}>
@@ -47,7 +46,6 @@ function RequestCoach() {
   const theCoach = coaches.find((c) => c.id === selectedCoach);
 
   return (
-    <>
       <div
         style={{
           display: "flex",
@@ -56,7 +54,7 @@ function RequestCoach() {
         }}
       >
         <Sidebar />
-        <main className="container">
+        <main className="form_center" style={{ marginLeft: "20%" }}>
           <section className="select">
             <br />
             <strong>
@@ -67,14 +65,14 @@ function RequestCoach() {
               onChange={(event) => setGoalId(event.target.value)}
             >
               {/* dropdown will have the goaltypes (select * from goaltypes)  */}
-              <option selected value="choose" >
+              <option selected value="choose">
                 Please choose below
               </option>
               {goalOptions}
             </select>
             <br />
           </section>
-      {/* {goalId > 0 && theCoach && (
+          {/* {goalId > 0 && theCoach && (
             <><section className="select">
               <br />
 
@@ -95,7 +93,6 @@ function RequestCoach() {
            }  */}
           {theCoach && (
             <section className="select">
-         
               <h4>{theCoach.alias}</h4>
               <center>
                 {theCoach.id && (
@@ -103,16 +100,15 @@ function RequestCoach() {
                     <img className="img-coach" src={theCoach.imageurl} />
                   </div>
                 )}
-                     <br/>
-          <button>Request for this Coach</button>
+                <br />
+                <button>Request for this Coach</button>
               </center>
             </section>
           )}
-     
+
           {/* { onSubmitForm && `You are matched with this coach.`} */}
-         </main>
+        </main>
       </div>
-    </>
   );
 }
 export default RequestCoach;
