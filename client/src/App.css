@@ -66,7 +66,7 @@ nav {
   font-family: 'Times New Roman', Times, serif;
   display: flex;
   flex-direction: row;
-  height: 350px;
+  height: 250px;
   width: 80%;
   justify-content: center;
   overflow: auto;
@@ -74,7 +74,7 @@ nav {
 
 .parallax {
   /* The image used */
-  background-image: url("https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466__480.jpg");
+  background-image: url("https://as1.ftcdn.net/v2/jpg/01/06/04/66/500_F_106046684_vWzVX9YLkOCYDJzYxJT3vvaVywDNwblh.jpg");
 
   /* Full height */
   height: 100%;
@@ -160,6 +160,7 @@ userdashboard-li a:hover {
   justify-content: center;
   font-size: large;
   width:100%;
+  margin: 1em;
 }
 
 .Paragraph{

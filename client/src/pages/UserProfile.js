@@ -41,9 +41,9 @@ function UserProfile() {
       <Sidebar />
  
       <div className="form_center">
-      <h2> User Information  </h2>
+      <h1 class="userinfo"> <u>User Information</u>  </h1><br/>
           <Table striped bordered hover>
-            <thead>
+            <thead className ="table"><br/>
             <tr>
             <th>Name:</th>
             <td><span name="name">{userInfo[0].first_name} {userInfo[0].last_name}</span></td>

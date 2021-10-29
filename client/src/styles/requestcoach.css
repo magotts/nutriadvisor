@@ -34,5 +34,19 @@ h4 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: 1em;
+    width: 50%;
+    justify-content: space-between;
+   
 
+}
+
+.excercise {
+  
+  justify-content: space-between;
+}
+
+
+.table{
+  font-size: large;
 }

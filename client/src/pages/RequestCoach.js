@@ -135,7 +135,7 @@ function RequestCoach() {
       <br />
       {coachName.length > 0 && <section  className="select">
 
-  <h1>Congrats!</h1>
+  <h1>Congrats!🎉</h1>
   <br />
   <h4>You are assigned to</h4> 
   <h4>{coachName}</h4>

@@ -67,7 +67,7 @@ const onSubmit = (event) => {
     }}>
       <Sidebar />
     <div className="form_center">
-      <h1>Exercise Search</h1>
+      <h1><u className= "excercise">Exercise Search</u></h1>
       <form onSubmit={onSubmit}>
         {alert !== "" && <Alert alert={alert} />}
         <div>
