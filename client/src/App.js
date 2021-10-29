@@ -47,13 +47,14 @@ function App() {
           <Route path="/exercise_search" exact component={Exercise_Search} />
           <Route path="/requestcoach" exact component={RequestCoach} />
           <Route path="/userprofile" exact component={UserProfile} />
+          
         </Switch>
         </section>
        </main>
         {auth && 
-   <Chat /> 
+      <Chat /> 
        }
-    
+      <Footer/>
       </Router>
      
     </div>
