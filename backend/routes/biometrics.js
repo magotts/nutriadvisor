@@ -24,7 +24,6 @@ router.post("/", async (req, res) => {
 
     try {
     const allWeights = await db.query(`SELECT * FROM biometrics where user_id = 1`);
-    console.log("allweight:", allWeights)
     res.json(allWeights.rows);
     
     }
@@ -38,9 +37,13 @@ router.post("/", async (req, res) => {
   router.get("/:id", async (req, res) => {
     try {
     const {id} = req.params;
-    const userInfo = await db.query(`select users.* 
+    const userInfo = await db.query(`
+    select users.*, goaltypes.description, coaches.alias
     from users
     join biometrics on users.id = biometrics.user_id
+    join goals on users.id = goals.user_id
+    join coaches on coaches.id = goals.coach_id
+    join goaltypes on goaltypes.id = goals.goaltype_id
     where biometrics.user_id = $1`, [id]);
     console.log("user info", userInfo)
     res.json(userInfo.rows);
