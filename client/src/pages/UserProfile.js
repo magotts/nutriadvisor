@@ -43,6 +43,8 @@ function UserProfile() {
 
       <div className="form_center">
       <h2> User Information  </h2>
+      <span name="profile-image"><img className="img-coach" src={userInfo[0].profile_image} /> </span>
+      <br/>
           <Table striped bordered hover>
             <thead>
             <tr>
@@ -58,12 +60,16 @@ function UserProfile() {
             <td><span name="age">{userInfo[0].age}</span></td>
           </tr>
           <tr>
-            <th>Height (inch):</th>
+            <th>Height (cm):</th>
             <td><span name="height">{userInfo[0].height}</span></td>
           </tr>
           <tr>
+            <th>Goal:</th>
+            <td><span name="goal-description">{userInfo[0].description}</span></td>
+          </tr>
+          <tr>
             <th>Assigned Coach:</th>
-            <td><span name="height">Coach Blake</span></td>
+            <td><span name="coach-name">{userInfo[0].alias}</span></td>
           </tr>
           </thead>
          
