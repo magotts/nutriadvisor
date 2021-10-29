@@ -4,11 +4,8 @@ import Exercises from "../components/ExerciseInfo";
 import Alert from "../components/ExerciseAlert";
 import Sidebar from "../components/Sidebar";
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> feature/sonamnewbranch
 const Exercise_Search = () => {
   const [query, setQuery] = useState("");
   const [gender, setGender] = useState("");
@@ -74,6 +71,7 @@ const Exercise_Search = () => {
         display: "flex",
         padding: 0,
         margin: 0,
+        paddingTop: "98px"
       }}
     >
       <Sidebar />
