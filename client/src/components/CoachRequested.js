@@ -4,7 +4,7 @@ const CoachRequested = (props) => {
    return (
     <div>
       <br/>
-      <h2>Congrats! You are now connected with {props.name}!</h2>
+      <center><h2>Congratulations! 🎉 <br/>You are now assigned to {props.name}!</h2></center>
     </div>
 
   )
