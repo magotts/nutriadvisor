@@ -1,8 +1,10 @@
 .sidebar {
-  width: 300px;
+  width: 250px;
   height: 100%;
-  background-color: rgb(120, 231, 198);
-  
+  background-color: rgb(159, 198, 228);
+  display: flex;
+  flex-direction: column;
+
 }
 
 .sidebarList {
@@ -13,9 +15,9 @@ padding: 0;
 
 .sidebarList .row {
   width:100%;
-  height: 50px;
-  background-color: rgb(224, 215, 86);
-  border: 1px solid black;
+  height: 100px;
+  padding: 2em;
+  background-color: #95dffc;
   list-style-type: none;
   margin: 0%;
   display: flex;
@@ -28,11 +30,11 @@ padding: 0;
 
 .sidebarList .row:hover {
 cursor: pointer;
-background-color:cadetblue;
+background-color:rgb(159, 198, 228);
 }
 
 .sidebarList .row #active {
-  background-color:cadetblue;
+  background-color:rgb(159, 198, 228);
   }
 
 .row #icon {
