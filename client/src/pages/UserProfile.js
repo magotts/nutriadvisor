@@ -20,6 +20,7 @@ function UserProfile() {
     }
   }
 
+ // show user info and their goaltype and coaches of user_id 1
   const getGoalOfUser= async (id) => {
     try {
       const response = await fetch(`http://localhost:5000/biometrics/goal/${id}`);
@@ -33,6 +34,17 @@ function UserProfile() {
     }
   }
 
+  const deleteGoal = async (id) => {
+    try {
+      const deleteGoal = await fetch(`http://localhost:5000/biometrics/goal/${id}`, {
+        method: "DELETE"
+      });
+     setUserGoal(userGoal.filter(goalUser => goalUser.id !== id));
+    }
+    catch (err) {
+      console.error(err.message)
+    }
+  }
 
   useEffect(() => {
     getUserInfo(1);
@@ -43,14 +55,8 @@ function UserProfile() {
 
   useEffect(() => {
     getGoalOfUser(1);
+    console.log("user goal ++++++", userGoal)
   }, []);
-  // useEffect(() => {
-  //   axios.get(`http://localhost:5000/biometrics/1`).then((res) => {
-  //     console.log("user profile", res.data)
-  //     setUserInfo(res.data);
-   
-  //   });
-  // }, []);
 
 
   return (
@@ -85,20 +91,29 @@ function UserProfile() {
             <th>Height (cm):</th>
             <td><span name="height">{userInfo[0].height}</span></td>
           </tr>
+          </thead>
+         
+         </Table>
+
           {userGoal[0] && <>
+            <Table striped bordered hover>
+            <thead>
           <tr>
             <th>Goal:</th>
             <td><span name="goal-description">{userGoal[0].description}</span></td>
           </tr>
           <tr>
             <th>Assigned Coach:</th>
-            <td><span name="coach-name">{userGoal[0].alias}</span></td>
+            <td><span name="coach-name">{userGoal[0].alias} </span> 
+            <button className="btn btn-danger" onClick={()=> deleteGoal(userGoal[0].id)}>Fire</button>
+            </td>
           </tr>
-          </>
-          }
           </thead>
          
-          </Table>
+         </Table>
+          </>
+          }
+       
           </>
 }
         </div>
