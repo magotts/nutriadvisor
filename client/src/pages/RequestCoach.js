@@ -27,6 +27,7 @@ function RequestCoach() {
       });
   }, [goalId]);
 
+
   const coachOptions = coaches.map((coach) => (
     <option key={coach.id} value={coach.id}>
       {coach.alias}
@@ -66,39 +67,35 @@ function RequestCoach() {
               onChange={(event) => setGoalId(event.target.value)}
             >
               {/* dropdown will have the goaltypes (select * from goaltypes)  */}
-              <option selected value="choose" disabled>
+              <option selected value="choose" >
                 Please choose below
               </option>
               {goalOptions}
             </select>
             <br />
           </section>
-          {goalId > 0 && theCoach && (
-            <section className="select">
+      {/* {goalId > 0 && theCoach && (
+            <><section className="select">
               <br />
-              <strong>
-                <h4>Choose your coach:</h4>
-              </strong>
+
               <select
                 value={theCoach.id}
                 onChange={selectCoach}
               >
-                {/* dropdown will have the goaltypes (select * from goaltypes)  */}
 
-                  <option value="choose" disabled>
-                    Please choose below
-                  </option>
 
+                <option value="choose" disabled>
+                  Please choose below
+                </option>
                 {coachOptions}
               </select>
-              <br />
+            </section><br /></>
+              )
 
-            </section>
-          )}
+           }  */}
           {theCoach && (
             <section className="select">
-              <h3>Congrats!</h3>
-              <h4>You are assigned to {theCoach.alias}</h4>
+         
               <h4>{theCoach.alias}</h4>
               <center>
                 {theCoach.id && (
@@ -106,10 +103,14 @@ function RequestCoach() {
                     <img className="img-coach" src={theCoach.imageurl} />
                   </div>
                 )}
+                     <br/>
+          <button>Request for this Coach</button>
               </center>
             </section>
           )}
-        </main>
+     
+          {/* { onSubmitForm && `You are matched with this coach.`} */}
+         </main>
       </div>
     </>
   );
