@@ -161,9 +161,10 @@ function Biometrics() {
                 </>
               )}
             </span>
-            <br />
+            <br /><center>
             <h3>Get your Daily Calories</h3>
             <strong>Enter your Weight(kg):</strong>
+            <br/>
             <input
               type="text"
               value={weight}
@@ -200,7 +201,7 @@ function Biometrics() {
               </option>
             </select>
             <br />
-            <button>Add</button>
+            <button>Add</button></center>
             <br />
           </form>
           <br />
@@ -211,6 +212,7 @@ function Biometrics() {
                 <th>Date</th>
                 <th>Weight(kg)</th>
                 <th>Calories Per Day</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
