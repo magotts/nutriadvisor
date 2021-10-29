@@ -15,8 +15,6 @@ import Food_Diary from "./pages/Food_Diary";
 import Biometrics from "./pages/Biometrics";
 import Food_Search from "./pages/Food_Search";
 import Chat from "./components/Chat";
-import UserDashboard from "./components/UserDashboard";
-import Sidebar from "./components/Sidebar"
 
 import Exercise_Search from "./pages/Exercise_Search";
 import RequestCoach from './pages/RequestCoach';
@@ -49,16 +47,16 @@ function App() {
           <Route path="/food_search" exact component={Food_Search} />
           <Route path="/exercise_search" exact component={Exercise_Search} />
           <Route path="/requestcoach" exact component={RequestCoach} />
-          <Route path="/userdashboard" exact component={UserDashboard} />
           <Route path="/userprofile" exact component={UserProfile} />
+          
         </Switch>
         
         </section>
        </main>
         {auth && 
-   <Chat /> 
+      <Chat /> 
        }
-    
+      <Footer/>
       </Router>
      
     </div>

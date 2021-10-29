@@ -3,13 +3,16 @@
 }
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   padding-top:10px;
+  width: auto;
 }
 
 .select {
-  padding-left: 20px;
-  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .img-coach {
@@ -28,7 +31,7 @@ h1 {
 h4 {
   text-align: center;
 }
-
+/* 
 .form_center {
     display: flex;
     justify-content: center;
@@ -50,3 +53,4 @@ h4 {
 .table{
   font-size: large;
 }
+} */
