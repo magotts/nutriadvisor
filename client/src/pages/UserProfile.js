@@ -38,8 +38,9 @@ function UserProfile() {
       padding: 0,
       margin: 0
     }}>
+
       <Sidebar />
- 
+
       <div className="form_center">
       <h2> User Information  </h2>
           <Table striped bordered hover>
