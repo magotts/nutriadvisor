@@ -51,7 +51,7 @@ function Biometrics() {
   const [choice, setChoice] = useState([]);
 
   const onSubmitForm = async (event) => {
-    debugger
+    
     event.preventDefault();
     try {
       const first_name= userInfo[0].first_name;
@@ -86,7 +86,7 @@ function Biometrics() {
   const calculateCalories = (weight, gender, height, age, choice) => {
     let bmr = 0;
     let calorie = 0;
-    debugger
+    
     if (gender === "Male") {
       bmr = 66.5 + (13.75 * weight) + (5.003 * height) - (6.755 * age);
     }

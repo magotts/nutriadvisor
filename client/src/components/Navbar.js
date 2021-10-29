@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 
 import React, { useState } from 'react';
-import Logo from "../assets/logo1.png";
+import Logo from "../assets/nutrilogo.png";
 import { Link } from "react-router-dom";
 import "../components/Navbar.css";
 import { authContext } from "../providers/AuthProvider";
