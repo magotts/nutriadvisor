@@ -3,7 +3,6 @@ import axios from "axios";
 import Foods from "../components/Foods";
 import FoodAlert from "../components/FoodAlert";
 import Sidebar from "../components/Sidebar";
-
 const Food_Search = () => {
   const [query, setQuery] = useState("");
   const [foods, setFoods] = useState([]);
