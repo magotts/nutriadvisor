@@ -25,7 +25,7 @@ function RequestCoach() {
       .then((res) => {
         console.log("look", res.data);
         setCoaches(res.data);
-        if (res.data.length >0 ) {
+        if (res.data.length > 0) {
           setSelectedCoach(res.data[0].id);
         }
       });
@@ -71,7 +71,6 @@ function RequestCoach() {
   const theCoach = coaches.find((c) => c.id === selectedCoach);
 
   return (
-    <>
       <div
         style={{
           display: "flex",
@@ -80,7 +79,7 @@ function RequestCoach() {
         }}
       >
         <Sidebar />
-        <main className="container">
+        <main className="form_center" style={{ marginLeft: "20%" }}>
           <section className="select">
             <br />
             <strong>
@@ -91,7 +90,7 @@ function RequestCoach() {
               onChange={(event) => setGoalId(event.target.value)}
             >
               {/* dropdown will have the goaltypes (select * from goaltypes)  */}
-              <option selected value="choose" >
+              <option selected value="choose">
                 Please choose below
               </option>
               {goalOptions}
@@ -101,7 +100,6 @@ function RequestCoach() {
  
           {theCoach && (
             <section className="select">
-         
               <h4>{theCoach.alias}</h4>
                 <center>
                   {theCoach.id && (
@@ -119,7 +117,6 @@ function RequestCoach() {
 
          </main>
       </div>
-    </>
   );
 }
 export default RequestCoach;

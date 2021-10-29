@@ -29,7 +29,7 @@ function App() {
 
   const { auth, user, logout } = useContext(authContext);
   return (
-    <div className="App">
+    <div className="outer-container">
       <Router>
         <Navbar/>
          {/* When user is logged in, show the sidebar page in UserDashboard */}

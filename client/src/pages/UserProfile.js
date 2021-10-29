@@ -1,22 +1,20 @@
-import React, {useState, useEffect} from "react";
-import { Table } from 'react-bootstrap';
+import React, { useState, useEffect } from "react";
+import { Table } from "react-bootstrap";
 import Sidebar from "../components/Sidebar";
-
 
 function UserProfile() {
   const [userInfo, setUserInfo] = useState([1]);
   const [userGoal, setUserGoal] = useState([1]);
 
-  const getUserInfo= async (id) => {
+  const getUserInfo = async (id) => {
     try {
       const response = await fetch(`http://localhost:5000/biometrics/${id}`);
       const jsonData = await response.json();
-      console.log("json", jsonData)
+      console.log("json", jsonData);
       setUserInfo(jsonData);
       return jsonData;
-    }
-    catch (err) {
-      console.error(err.message)
+    } catch (err) {
+      console.error(err.message);
     }
   }
 
@@ -58,17 +56,17 @@ function UserProfile() {
     console.log("user goal ++++++", userGoal)
   }, []);
 
-
   return (
-    <div style={{
-      display: "flex",
-      padding: 0,
-      margin: 0
-    }}>
-
+    <div
+      style={{
+        display: "flex",
+        padding: 0,
+        margin: 0,
+      }}
+    >
       <Sidebar />
 
-      <div className="form_center">
+      <div className="form_center" style={{ marginLeft: "20%" }}>
       <h2> User Information  </h2>
       {userInfo[0] && <>
       <span name="profile-image"><img className="img-coach" src={userInfo[0].profile_image} /> </span>
