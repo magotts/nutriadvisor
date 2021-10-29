@@ -94,6 +94,10 @@ function UserProfile() {
          
          </Table>
 
+{!userGoal[0] && 
+<h3>You are currently not assigned to any coach.</h3>
+}
+
           {userGoal[0] && <>
             <Table striped bordered hover>
             <thead>
@@ -113,7 +117,7 @@ function UserProfile() {
           </>
           }
        
-          </>
+          </> 
 }
         </div>
         </div>
