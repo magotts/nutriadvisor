@@ -61,8 +61,13 @@ function Food_Diary() {
 
 
   return (
-    <>
-    <div className="container1">
+
+    <div style={{
+      display: "flex",
+      padding: 0,
+      margin: 0,
+      paddingTop: "98px"
+    }}>
       <Sidebar />
       <div className="form_center" style={{ marginLeft: "20%" }}>
         <h1>Food Diary</h1>
@@ -103,7 +108,6 @@ function Food_Diary() {
 </Table>
       </div>
     </div>
-    </>
   );
 }
 

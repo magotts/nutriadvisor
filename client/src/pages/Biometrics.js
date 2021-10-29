@@ -117,12 +117,12 @@ function Biometrics() {
   };
 
   return (
-    <>
       <div
         style={{
           display: "flex",
           padding: 0,
           margin: 0,
+          paddingTop: "98px"
         }}
       >
         <Sidebar />
@@ -233,7 +233,6 @@ function Biometrics() {
           </Table>
         </div>
       </div>
-    </>
   );
 }
 

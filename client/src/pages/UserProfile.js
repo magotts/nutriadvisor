@@ -62,6 +62,7 @@ function UserProfile() {
         display: "flex",
         padding: 0,
         margin: 0,
+        paddingTop: "98px"
       }}
     >
       <Sidebar />
