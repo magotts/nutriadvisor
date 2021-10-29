@@ -83,7 +83,7 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   try {
   const {id} = req.params;
-  const deleteBiometrics = await db.query(`DELETE from biometrics WHERE id = $1`, [id]); 
+  const deleteBiometrics = await db.query(`DELETE from biometrics WHERE user_id = $1`, [id]); 
   res.json("Biometrics was deleted.");
 
   }
@@ -98,7 +98,7 @@ router.delete("/:id", async (req, res) => {
       try {
       const {id} = req.params;
       const userInfo = await db.query(`
-      select users.*, goaltypes.description, coaches.alias
+      select users.*, goals.id, goaltypes.description, coaches.alias
       from users
       join biometrics on users.id = biometrics.user_id
       join goals on users.id = goals.user_id
@@ -115,6 +115,18 @@ router.delete("/:id", async (req, res) => {
       }
       });
 
+      // delete goals of a user
+router.delete("/goal/:id", async (req, res) => {
+  try {
+  const {id} = req.params;
+  const deleteCoach = await db.query(`DELETE from goals WHERE id = $1`, [id]); 
+  res.json("Coach has been fired.");
+
+  }
+  catch(err) {
+    console.error(err.message)
+  }
+  });
 
 
   return router;
