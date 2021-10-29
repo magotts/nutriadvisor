@@ -5,6 +5,7 @@ import Alert from '../components/ExerciseAlert';
 import Sidebar from "../components/Sidebar";
 
 
+
 const Exercise_Search = () => {
   const [query, setQuery] = useState("");
   const [gender, setGender] = useState("");
@@ -67,7 +68,7 @@ const onSubmit = (event) => {
     }}>
       <Sidebar />
     <div className="form_center">
-      <h1><u className= "excercise">Exercise Search</u></h1>
+      <h1 className= "excercise"><u >Exercise Search</u></h1>
       <form onSubmit={onSubmit}>
         {alert !== "" && <Alert alert={alert} />}
         <div>

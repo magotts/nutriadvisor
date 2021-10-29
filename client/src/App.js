@@ -1,8 +1,11 @@
 import './App.css';
 import './Login.css';
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 
 import Home from "./pages/Home";
