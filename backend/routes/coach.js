@@ -4,15 +4,18 @@ const router = express.Router();
 const coachRouter = (db) => {
 
   // show users of coach id = 1
-  router.get("/", async (req, res) => {
-    //console.log("coach id", req.params);
+  router.get("/:id", async (req, res) => {
 
     try {
-    const usersUnderCoach = await db.query(`select distinct goals.id, users.*, coaches.*, goaltypes.* from users
+    const {id} = req.params;
+    console.log("coach id", req.params);
+
+    const usersUnderCoach = await db.query(`select goals.id, users.*, coaches.*, goaltypes.* from users
     JOIN goals ON goals.user_id = users.id
     JOIN coaches ON goals.coach_id = coaches.id
     JOIN goaltypes ON goals.goaltype_id = goaltypes.id
-    WHERE coaches.id = 1`);
+    WHERE coaches.id = $1`, [id]);
+    console.log("user backend coach", usersUnderCoach)
     res.json(usersUnderCoach.rows);
     
     }
