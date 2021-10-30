@@ -82,25 +82,9 @@ nav {
   justify-content: center;
 }
 
-<<<<<<< HEAD
-.Bothimages{
-  font-family: 'Times New Roman', Times, serif;
-  display: flex;
-  flex-direction: row;
-  height: 250px;
-  width: 80%;
-  justify-content: center;
-  overflow: auto;
-}
-
-.parallax {
-  /* The image used */
-  background-image: url("https://as1.ftcdn.net/v2/jpg/01/06/04/66/500_F_106046684_vWzVX9YLkOCYDJzYxJT3vvaVywDNwblh.jpg");
-=======
 .parallax {
   /* The image used */
   background-image: url("https://images.unsplash.com/photo-1589645733841-b54da1b6ef06?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2732&q=80");
->>>>>>> 98322a9b27eb86acb37105d85600dfe49ea196af
 
   /* Full height */
   height: 100%;
@@ -217,14 +201,9 @@ userdashboard-li a:hover {
   height: 100%;
 }
 
-<<<<<<< HEAD
-} */
-
-=======
 .aboutpicandtext {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 
 }
->>>>>>> 98322a9b27eb86acb37105d85600dfe49ea196af
