@@ -18,6 +18,8 @@ const chatRouter = require('./routes/chat');
 const userchatRouter = require('./routes/userchat');
 const userdashboardRouter = require('./routes/userdashboard');
 const requestcoachRouter = require('./routes/requestcoach');
+const coachRouter = require('./routes/coach');
+
 
 
 
@@ -47,6 +49,7 @@ app.use('/chat', chatRouter(http));
 app.use('/userchat', userchatRouter(db));
 app.use('/userdashboard', userdashboardRouter(db));
 app.use('/requestcoach', requestcoachRouter(db));
+app.use('/coach', coachRouter(db));
 
 
 // chat app
