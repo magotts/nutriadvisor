@@ -3,13 +3,17 @@ const router = express.Router();
 
 const coachRouter = (db) => {
 
-  // show weight
+  // show users of coach id = 1
   router.get("/", async (req, res) => {
-    console.log("user id", req.params);
+    //console.log("coach id", req.params);
 
     try {
-    const allWeights = await db.query(`SELECT * FROM biometrics where user_id = 1`);
-    res.json(allWeights.rows);
+    const usersUnderCoach = await db.query(`select distinct goals.id, users.*, coaches.*, goaltypes.* from users
+    JOIN goals ON goals.user_id = users.id
+    JOIN coaches ON goals.coach_id = coaches.id
+    JOIN goaltypes ON goals.goaltype_id = goaltypes.id
+    WHERE coaches.id = 1`);
+    res.json(usersUnderCoach.rows);
     
     }
     catch(err) {
@@ -17,26 +21,6 @@ const coachRouter = (db) => {
       console.error(err.message)
     }
     });
-
-    // show user info of user_id 1
-  router.get("/:id", async (req, res) => {
-    try {
-    const {id} = req.params;
-    const userInfo = await db.query(`
-    select *, biometrics.weight
-    from users
-    join biometrics on users.id = biometrics.user_id
-    where biometrics.user_id = $1`, [id]);
-    console.log("user info", userInfo)
-    res.json(userInfo.rows);
-    
-    }
-    catch(err) {
-      console.log("error", err);
-      console.error(err.message)
-    }
-    });
-  
 
 
 
