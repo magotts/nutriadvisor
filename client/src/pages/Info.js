@@ -7,7 +7,10 @@ export default function Info() {
   // Show user Info
   return (
     <div>
-      <p className="UserInfo">
+      <p style={{
+          color: "rgb(255, 255, 255)",
+          fontSize: "20px"
+      }}>
         <div>Logged in as </div>
         <div>{user.name}</div>
       </p >
