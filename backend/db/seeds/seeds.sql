@@ -1,9 +1,9 @@
 INSERT INTO users(first_name, last_name, email, password, gender, age, height, profile_image) 
 VALUES 
-('Diana', 'Prince', 'hello@world.com', 'password', 'Female', '30', '60', 'https://media.gq.com/photos/5a0b201485eb8b728aa3ba99/3:4/w_999,h_1332,c_limit/gq-gal-gadot-accent.jpg'),
-('Yi Rong', 'Qin', 'hi@yahoo.com', 'password', 'Female', '25', '55', 'https://media.istockphoto.com/vectors/female-fitness-icon-vector-id1277127590?k=20&m=1277127590&s=170667a&w=0&h=oXg1V0qNg3DmqzPWPoNI9GqOonFibQEhLlvukoPeg90='),
-('Sonam', 'Malhotra',  'heyhey@hey.com', 'password', 'Female', '20', '50', 'https://media.istockphoto.com/vectors/female-fitness-icon-vector-id1277127590?k=20&m=1277127590&s=170667a&w=0&h=oXg1V0qNg3DmqzPWPoNI9GqOonFibQEhLlvukoPeg90='),
-('Yvette', 'Lim',  'a@a.com', 'password', 'Female', '23', '45', 'https://media.istockphoto.com/vectors/female-fitness-icon-vector-id1277127590?k=20&m=1277127590&s=170667a&w=0&h=oXg1V0qNg3DmqzPWPoNI9GqOonFibQEhLlvukoPeg90=');
+('Diana', 'Prince', 'hello@world.com', 'password', 'Female', '30', '178', 'https://media.gq.com/photos/5a0b201485eb8b728aa3ba99/3:4/w_999,h_1332,c_limit/gq-gal-gadot-accent.jpg'),
+('Yi Rong', 'Qin', 'hi@yahoo.com', 'password', 'Female', '25', '150', 'https://media.istockphoto.com/vectors/female-fitness-icon-vector-id1277127590?k=20&m=1277127590&s=170667a&w=0&h=oXg1V0qNg3DmqzPWPoNI9GqOonFibQEhLlvukoPeg90='),
+('Sonam', 'Malhotra',  'heyhey@hey.com', 'password', 'Female', '20', '130', 'https://media.istockphoto.com/vectors/female-fitness-icon-vector-id1277127590?k=20&m=1277127590&s=170667a&w=0&h=oXg1V0qNg3DmqzPWPoNI9GqOonFibQEhLlvukoPeg90='),
+('Yvette', 'Lim',  'a@a.com', 'password', 'Female', '23', '140', 'https://media.istockphoto.com/vectors/female-fitness-icon-vector-id1277127590?k=20&m=1277127590&s=170667a&w=0&h=oXg1V0qNg3DmqzPWPoNI9GqOonFibQEhLlvukoPeg90=');
 -- ('Coach Blake', 'Lively', true, 'coach@coach.com', 'password', 'female', '35', '65');
 
 INSERT INTO goaltypes(description) 
