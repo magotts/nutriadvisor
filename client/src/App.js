@@ -22,7 +22,7 @@ import Chat from "./components/Chat";
 import Exercise_Search from "./pages/Exercise_Search";
 import RequestCoach from './pages/RequestCoach';
 import UserProfile from './pages/UserProfile';
-
+import CoachProfile from './pages/CoachProfile';
 
 import { authContext } from "./providers/AuthProvider";
 import { useContext } from 'react';
@@ -51,6 +51,7 @@ function App() {
           <Route path="/exercise_search" exact component={Exercise_Search} />
           <Route path="/requestcoach" exact component={RequestCoach} />
           <Route path="/userprofile" exact component={UserProfile} />
+          <Route path="/coachprofile" exact component={CoachProfile} />
           
         </Switch>
         
