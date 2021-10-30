@@ -3,6 +3,8 @@ import axios from "axios";
 import Foods from "../components/Foods";
 import FoodAlert from "../components/FoodAlert";
 import Sidebar from "../components/Sidebar";
+import "../styles/foodsearch.css";
+
 const Food_Search = () => {
   const [query, setQuery] = useState("");
   const [foods, setFoods] = useState([]);
@@ -75,20 +77,27 @@ const Food_Search = () => {
       }}
     >
       <Sidebar />
-      <div className="form_center" style={{marginLeft: '20%'}}>
+      <div className="form_center" style={{
+        marginLeft: '20%',
+        color: '#a2cdcb',
+        height: "100%"
+        }}>
         <h1>Food Search</h1>
         <form onSubmit={onSubmit}>
           {alert !== "" && <FoodAlert alert={alert} />}
+          <div className="search-div">
           <input
+            className="search-form"
             type="text"
             placeholder="Search Food"
             autoComplete="off"
             onChange={onChange}
             value={query}
           />
-          <input type="submit" value="Search Food" />
+          <input className="search-button" type="submit" value="Search Food" />
+          </div>
         </form>
-        <div>
+        <div className="foods">
           {foods !== [] &&
             foods.map((foods, i) => <Foods key={i} foods={foods} />)}
         </div>

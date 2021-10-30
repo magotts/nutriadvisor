@@ -1,4 +1,5 @@
 import React from 'react';
+import "../styles/foodsearch.css";
 
 const FoodNutrients = ({foodNutrients}) => {
   const nutrientsMap = function() {
@@ -13,17 +14,21 @@ const FoodNutrients = ({foodNutrients}) => {
                 <td>
                   {nutrient.value}
                 </td>
+                <td>
+                  {nutrient.unitName}
+                </td>
               </tr>
           )
       }
     })
   }
     return (
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
-              <th scope="col">Nutrient Name</th>
-              <th scope="col">Nutrient Value</th>
+              <th scope="col">Nutrient name</th>
+              <th scope="col">Value per serving</th>
+              <th scope="col">Unit</th>
             </tr>
           </thead>
             <tbody>
