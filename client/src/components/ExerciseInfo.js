@@ -1,5 +1,6 @@
 import React from 'react'
-import "../styles/excercisesearch.css"
+import "../styles/exercisesearch.css"
+
 const Exercises = ({exercises}) => {
   const{name, duration_min, nf_calories} = exercises;
   

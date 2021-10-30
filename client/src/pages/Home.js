@@ -15,22 +15,32 @@ function Home() {
     >
       <div className="parallax">
         <img
-          class="image-1"
+          alt=""
+          className="image-1"
           src="https://static.wixstatic.com/media/3cd817_01efa93dfc2b4b77808f98f8915ba723~mv2.gif"
-        ></img>
+        />
         <div className="images-home">
-          <img
-            className="image-3"
-            src="https://static.toiimg.com/thumb/81551320.cms?width=680&height=512&imgsize=967762"
-          ></img>
-          <img
-            className="image-4"
-            src="https://domf5oio6qrcr.cloudfront.net/medialibrary/2293/l0908b16207233934035.jpg"
-          ></img>
-          <img
-            className="image-2"
-            src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-          ></img>
+          <Link to="/food_search">
+            <img
+              alt="avocado toast"
+              className="image-2"
+              src="https://cdn.dribbble.com/users/6172678/screenshots/14420419/media/72fbc65f79121ccff7661e8642a5c10a.gif"
+            />
+          </Link>
+          <Link to="/exercise_search">
+            <img
+              alt="running"
+              className="image-2"
+              src="https://n1s1.hsmedia.ru/d6/13/6e/d6136e54f83d566000adede389207348/1000x1000_0xac120002_9480279451540484588.gif"
+            />
+          </Link>
+          <Link to="/biometrics">
+            <img
+              alt="scale"
+              className="image-2"
+              src="https://c.tenor.com/OO7zyJWt_tsAAAAM/donut-weighing-scale.gif"
+            />
+          </Link>
         </div>
       </div>
     </div>
