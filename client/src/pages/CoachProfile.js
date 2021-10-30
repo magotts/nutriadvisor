@@ -1,13 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "react-bootstrap";
 import Sidebar from "../components/Sidebar";
-import UserFoodDiary from "../components/UserFoodDiary";
 
 function CoachProfile() {
   const [userUnderCoach, setUserUnderCoach] = useState([1]);
+  const [userInfo, setUserInfo] = useState([1]);
   const [selectedUser, setSelectedUser] = useState(null);
   const [showFoodDiary, setShowFoodDiary] = useState(false);
   const [userFoodDiary, setUserFoodDiary] = useState([]);
+  const [showUserProfile, setShowUserProfile] = useState(false);
+
+  const getUserInfo = async (id) => {
+    try {
+      setShowUserProfile(false);
+      const response = await fetch(`http://localhost:5000/biometrics/${id}`);
+      const jsonData = await response.json();
+      console.log("json", jsonData);
+      setUserInfo(jsonData);
+      return jsonData;
+    } catch (err) {
+      console.error(err.message);
+    }
+  }
 
   const getUserUnderCoach = async (id) => {
     try {
@@ -34,6 +48,10 @@ function CoachProfile() {
     }
   }
 
+  useEffect(() => {
+    getUserInfo(1);
+    console.log("info", userInfo)
+  }, []);
 
   useEffect(() => {
     getUserUnderCoach(1);
@@ -63,8 +81,6 @@ function CoachProfile() {
       </>
  ))
 
-
-
   return (
     <div
       style={{
@@ -78,20 +94,48 @@ function CoachProfile() {
 
       <div className="form_center" style={{ marginLeft: "20%" }}>
       <h1><u> Coach Dashboard </u> </h1> <br/>
-      <h2><span name="name">{userUnderCoach[0].alias}</span></h2>
+     
       {userUnderCoach[0] && <>
-      <span name="profile-image"><img className="img-coach" src={userUnderCoach[0].imageurl} alt="Coach Picture" /> </span>
+        <h2><span name="name">{userUnderCoach[0].alias}</span></h2>
+      <span name="profile-image"><img className="img-coach" src={userUnderCoach[0].imageurl} alt="Coach" /> </span>
       <br/>
-          
-       
           </> 
 }
-
-
           <h2>Users assigned to this coach:</h2>
-                {usersCoach}
-          <button onClick={()=>setShowFoodDiary(!showFoodDiary)}>Show Food Diary</button>
-       
+          <table>
+            <tr>
+                <td>{usersCoach}</td>
+          <td><button onClick={()=>setShowFoodDiary(!showFoodDiary)}>Food Diary</button></td>
+          <td><button onClick={()=>setShowUserProfile(!showUserProfile)}>User Profile</button></td>
+          </tr>
+          </table>
+
+          {showUserProfile && userInfo[0] && <>
+      <img className="img-coach" src={userInfo[0].profile_image} alt="User" /> 
+      
+          <Table striped bordered hover>
+            <thead className ="table"><br/>
+            <tr>
+            <th>Name:</th>
+            <td><span name="name">{userInfo[0].first_name} {userInfo[0].last_name}</span></td>
+          </tr>
+          <tr>
+            <th>Gender:</th>
+            <td><span name="gender">{userInfo[0].gender}</span></td>
+          </tr>
+          <tr>
+            <th>Age:</th>
+            <td><span name="age">{userInfo[0].age}</span></td>
+          </tr>
+          <tr>
+            <th>Height (cm):</th>
+            <td><span name="height">{userInfo[0].height}</span></td>
+          </tr>
+          </thead>
+         
+         </Table>
+         </>
+}
           { showFoodDiary && <>
             <Table striped bordered hover>
             <thead className ="table">
