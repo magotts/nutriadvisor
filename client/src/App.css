@@ -100,7 +100,7 @@ nav {
   font-size: 2em;
   visibility: hidden;
   opacity: 0;
-
+  text-align: center;
 }
 
 .img__wrap:hover .img__description {
