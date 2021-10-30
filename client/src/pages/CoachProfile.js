@@ -105,8 +105,8 @@ function CoachProfile() {
           <table>
             <tr>
                 <td>{usersCoach}</td>
-          <td><button onClick={()=>setShowFoodDiary(!showFoodDiary)}>Food Diary</button></td>
-          <td><button onClick={()=>setShowUserProfile(!showUserProfile)}>User Profile</button></td>
+                <td><button onClick={()=>setShowUserProfile(!showUserProfile)}>User Profile</button></td>
+                <td><button onClick={()=>setShowFoodDiary(!showFoodDiary)}>Food Diary</button></td>
           </tr>
           </table>
 
