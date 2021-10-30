@@ -1,8 +1,11 @@
 import './App.css';
 import './Login.css';
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 
 import Home from "./pages/Home";
@@ -34,6 +37,7 @@ function App() {
         <Navbar/>
          {/* When user is logged in, show the sidebar page in UserDashboard */}
         <main> 
+          {/* <section>{auth && ['/userdashboard','/userprofile', '/food_diary', '/biometrics', '/food_search', '/exercise_search'].find(el => el === window.location.pathname) && <Sidebar/>} </section> */}
           {/* <section>{auth && ['/userprofile', '/food_diary', '/biometrics', '/food_search', '/exercise_search'].find(el => el === window.location.pathname) && <Sidebar/>} </section> */}
         <section>
         <Switch>
@@ -49,6 +53,7 @@ function App() {
           <Route path="/userprofile" exact component={UserProfile} />
           
         </Switch>
+        
         </section>
        </main>
         {auth && 

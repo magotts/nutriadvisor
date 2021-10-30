@@ -68,12 +68,12 @@ function UserProfile() {
       <Sidebar />
 
       <div className="form_center" style={{ marginLeft: "20%" }}>
-      <h2> User Information  </h2>
+      <h1><u> User Information </u> </h1>
       {userInfo[0] && <>
       <span name="profile-image"><img className="img-coach" src={userInfo[0].profile_image} /> </span>
       <br/>
           <Table striped bordered hover>
-            <thead>
+            <thead className ="table"><br/>
             <tr>
             <th>Name:</th>
             <td><span name="name">{userInfo[0].first_name} {userInfo[0].last_name}</span></td>

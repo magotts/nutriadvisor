@@ -4,6 +4,8 @@ import Exercises from "../components/ExerciseInfo";
 import Alert from "../components/ExerciseAlert";
 import Sidebar from "../components/Sidebar";
 
+
+
 const Exercise_Search = () => {
   const [query, setQuery] = useState("");
   const [gender, setGender] = useState("");

@@ -70,7 +70,7 @@ function Food_Diary() {
     }}>
       <Sidebar />
       <div className="form_center" style={{ marginLeft: "20%" }}>
-        <h1>Food Diary</h1>
+        <h1 className= "Fooddiary">Food Diary</h1>
         <form className="form-center" onSubmit={onSubmitForm}>
           Breakfast:<input class="breakfast" type="text" value={breakfast} onChange={ event => setBreakfast(event.target.value)}/><br/>
           Lunch:<input type="text" value={lunch} onChange={ event => setLunch(event.target.value)}/><br/>
