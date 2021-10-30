@@ -75,51 +75,56 @@ const Exercise_Search = () => {
       }}
     >
       <Sidebar />
-      <div className="form_center" style={{ marginLeft: "20%" }}>
+      <div className="form_center" style={{
+        marginLeft: "20%",
+        color: "#a2cdcb"
+        }}>
         <h1>Exercise Search</h1>
         <form onSubmit={onSubmit}>
           {alert !== "" && <Alert alert={alert} />}
-          <div>
+          <div className="exesearch-div">
             <input
+              className="exesearch-form"
               type="text"
               value={query}
               placeholder="Exercise Type and Duration"
               onChange={(event) => onChange(event, setQuery)}
             />
-          </div>
-          <div>
+
             <input
+              className="exesearch-form"
               type="text"
               value={gender}
               placeholder="Gender"
               onChange={(event) => onChange(event, setGender)}
             />
-          </div>
-          <div>
+
             <input
+              className="exesearch-form"
               type="text"
               value={weight_kg}
               placeholder="Weight (kg)"
               onChange={(event) => onChange(event, setWeightKg)}
             />
-          </div>
-          <div>
+
             <input
+              className="exesearch-form"
               type="text"
               value={height_cm}
               placeholder="Height (cm)"
               onChange={(event) => onChange(event, setHeightCm)}
             />
-          </div>
-          <div>
+
             <input
+              className="exesearch-form"
               type="text"
               value={age}
               placeholder="Age"
               onChange={(event) => onChange(event, setAge)}
             />
+          
+          <input className="search-button" type="submit" value="Search Exercise" />
           </div>
-          <input type="submit" value="Search Exercise" />
         </form>
         <div>
           {exercises !== [] &&

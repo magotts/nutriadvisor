@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "react-bootstrap";
 import Sidebar from "../components/Sidebar";
+import "../styles/userprofile.css";
 
 function UserProfile() {
   const [userInfo, setUserInfo] = useState([1]);
@@ -67,13 +68,16 @@ function UserProfile() {
     >
       <Sidebar />
 
-      <div className="form_center" style={{ marginLeft: "20%" }}>
-      <h1><u> User Information </u> </h1>
+      <div className="form_center" style={{ color: "#a2cdcb", marginLeft: "20%" }}>
+      <h1> User Information </h1>
+      <div className="usermain">
+      
       {userInfo[0] && <>
-      <span name="profile-image"><img className="img-coach" src={userInfo[0].profile_image} alt="User"/> </span>
-      <br/>
-          <Table striped bordered hover>
-            <thead className ="table"><br/>
+      
+      <span name="profile-image"><img className="userimg" src={userInfo[0].profile_image} alt="User"/> </span>
+      <div className="usertables">
+          <Table borderless>
+            <thead className ="table table-borderless" style={{ color: "#a2cdcb" }}><br/>
             <tr>
             <th>Name:</th>
             <td><span name="name">{userInfo[0].first_name} {userInfo[0].last_name}</span></td>
@@ -99,8 +103,8 @@ function UserProfile() {
 }
 
           {userGoal[0] && <>
-            <Table striped bordered hover>
-            <thead>
+            <Table borderless>
+            <thead className ="table table-borderless" style={{ color: "#a2cdcb" }}>
           <tr>
             <th>Goal:</th>
             <td><span name="goal-description">{userGoal[0].description}</span></td>
@@ -108,19 +112,22 @@ function UserProfile() {
           <tr>
             <th>Assigned Coach:</th>
             <td><span name="coach-name">{userGoal[0].alias} </span> 
-            <button className="btn btn-danger" onClick={()=> deleteGoal(userGoal[0].id)}>Fire</button>
+            <button className="userfirebutton" style={{ backgroundColor: "#a2cdcb" }} onClick={()=> deleteGoal(userGoal[0].id)}>Fire</button>
             </td>
           </tr>
           </thead>
          
          </Table>
+         
           </>
           }
-       
+       </div>
           </> 
 }
-        </div>
-        </div>
+        
+      </div>
+    </div>
+  </div>
        
 
      

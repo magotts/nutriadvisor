@@ -73,28 +73,35 @@ const Food_Search = () => {
         display: "flex",
         padding: 0,
         margin: 0,
-        paddingTop: "98px"
+        paddingTop: "98px",
       }}
     >
       <Sidebar />
-      <div className="form_center" style={{
-        marginLeft: '20%',
-        color: '#a2cdcb',
-        height: "100%"
-        }}>
+      <div
+        className="form_center"
+        style={{
+          marginLeft: "20%",
+          color: "#a2cdcb",
+          height: "100%",
+        }}
+      >
         <h1>Food Search</h1>
         <form onSubmit={onSubmit}>
           {alert !== "" && <FoodAlert alert={alert} />}
           <div className="search-div">
-          <input
-            className="search-form"
-            type="text"
-            placeholder="Search Food"
-            autoComplete="off"
-            onChange={onChange}
-            value={query}
-          />
-          <input className="search-button" type="submit" value="Search Food" />
+            <input
+              className="search-form"
+              type="text"
+              placeholder="Search Food"
+              autoComplete="off"
+              onChange={onChange}
+              value={query}
+            />
+            <input
+              className="search-button"
+              type="submit"
+              value="Search Food"
+            />
           </div>
         </form>
         <div className="foods">

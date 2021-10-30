@@ -1,3 +1,18 @@
+html {
+  background-color: #faf7f5;
+}
+
+button.rcw-launcher {
+  background-color: #d6e6e1;
+}
+
+.rcw-widget-container .rcw-conversation-container .rcw-header {
+  background-color: #a2cdcb
+}
+
+.rcw-widget-container {
+  padding-bottom: 2em;
+}
 
 .outer-container {
   display: table;
@@ -19,7 +34,6 @@
   padding-top: 2em;
   align-items: center;
   flex-direction: column;
-  background-color: #faf7f5;
 }
 
 .sidebar {
