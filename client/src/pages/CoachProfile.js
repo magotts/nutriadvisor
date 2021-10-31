@@ -5,7 +5,6 @@ import Sidebar from "../components/Sidebar";
 function CoachProfile() {
   const [userUnderCoach, setUserUnderCoach] = useState([1]);
   const [userInfo, setUserInfo] = useState([1]);
-  const [selectedUser, setSelectedUser] = useState(null);
   const [showFoodDiary, setShowFoodDiary] = useState(false);
   const [userFoodDiary, setUserFoodDiary] = useState([]);
   const [showUserProfile, setShowUserProfile] = useState(false);
@@ -50,17 +49,14 @@ function CoachProfile() {
 
   useEffect(() => {
     getUserInfo(1);
-    console.log("info", userInfo)
   }, []);
 
   useEffect(() => {
     getUserUnderCoach(1);
-    console.log("USER UNDER COACH", userUnderCoach)
   }, []); 
 
   useEffect(() => {
     getUserFoodDiary(1);
-    console.log("USER Food DiaryZ", userFoodDiary)
   }, []); 
 
   const usersCoach = userUnderCoach.map((users) => (
