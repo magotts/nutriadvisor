@@ -7,7 +7,6 @@ const requestcoachRouter = (db) => {
   router.get("/", async (req, res) => {
     try {
       const allGoaltypes = await db.query(`SELECT * FROM goaltypes`);
-      console.log("allGoaltypes:", allGoaltypes);
       res.json(allGoaltypes.rows);
     } catch (err) {
       console.log("error", err);
@@ -25,10 +24,8 @@ const requestcoachRouter = (db) => {
         `SELECT * from coaches WHERE goaltype_id = $1;`,
         [id]
       );
-      console.log("specific coach:", specificCoach);
       res.json(specificCoach.rows);
     } catch (err) {
-      console.log("error", err);
       console.error(err.message);
     }
   });
@@ -37,9 +34,7 @@ const requestcoachRouter = (db) => {
   // add a coach with a goaltype_id
   router.post("/", async (req, res) => {
     try {
-      console.log("reqbody", req.body);
-
-      const { coachId, goalId  } = req.body;
+      const { coachId, goalId } = req.body;
       const requestCoach = await db.query(
         `INSERT INTO goals(user_id, coach_id, goaltype_id) VALUES ('1', $1, $2) RETURNING *`,
         [coachId, goalId]

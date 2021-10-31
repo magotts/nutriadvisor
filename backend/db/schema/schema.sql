@@ -5,8 +5,6 @@ DROP TABLE IF EXISTS goals CASCADE;
 DROP TABLE IF EXISTS food_diary CASCADE;
 DROP TABLE IF EXISTS goaltypes CASCADE;
 
--- DROP TABLE IF EXISTS messages CASCADE;
-
 CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
   first_name VARCHAR(255) NOT NULL,
@@ -28,8 +26,6 @@ CREATE TABLE biometrics (
   calories_per_day INTEGER,
   date_created TIMESTAMP DEFAULT NOW()
 );
-
--- goals and specialties think of a better name
 
 CREATE TABLE goaltypes (
   id SERIAL PRIMARY KEY NOT NULL,
@@ -62,14 +58,5 @@ CREATE TABLE goals (
   coach_id INTEGER NOT NULL REFERENCES coaches(id) ON DELETE CASCADE,
   goaltype_id INTEGER NOT NULL REFERENCES goaltypes(id) ON DELETE CASCADE
 );
-
--- CREATE TABLE messages (
---   id SERIAL PRIMARY KEY NOT NULL,
---   sender_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
---   receiver_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
---   conversation TEXT,
---   date_created TIMESTAMP DEFAULT NOW()
--- );
-
 
 

@@ -22,8 +22,6 @@ const coachRouter = require('./routes/coach');
 
 
 
-
-
 const app = express();
 const http = require("http").createServer(app);
 
@@ -53,7 +51,7 @@ app.use('/coach', coachRouter(db));
 
 
 // chat app
-http.listen(5001, () => console.log("Server is running on port 5001"));
+http.listen(5001, () => console.log("Chat Server is running on port 5001"));
 chatRouter(http);
 
 module.exports = app;
