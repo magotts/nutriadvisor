@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const FoodAlert = ({alert}) => {
+const FoodAlert = ({ alert }) => {
   return (
     <div>
       <h3>{alert}</h3>
     </div>
-  )
-}
+  );
+};
 
-export default FoodAlert
+export default FoodAlert;

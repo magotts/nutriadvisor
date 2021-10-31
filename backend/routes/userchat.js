@@ -11,7 +11,6 @@ const userchatRouter = (db) => {
       ]);
       res.json(userInfo.rows);
     } catch (err) {
-      console.log("error", err);
       console.error(err.message);
     }
   });

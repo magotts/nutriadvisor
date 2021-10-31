@@ -14,7 +14,6 @@ function CoachProfile() {
       setShowUserProfile(false);
       const response = await fetch(`http://localhost:5000/biometrics/${id}`);
       const jsonData = await response.json();
-      console.log("json", jsonData);
       setUserInfo(jsonData);
       return jsonData;
     } catch (err) {
@@ -27,7 +26,6 @@ function CoachProfile() {
       setShowFoodDiary(false);
       const response = await fetch(`http://localhost:5000/coach/${id}`);
       const jsonData = await response.json();
-      console.log("coach jsondata",jsonData)
       setUserUnderCoach(jsonData);
       return jsonData;
     } catch (err) {
@@ -39,7 +37,6 @@ function CoachProfile() {
     try {
       const response = await fetch(`http://localhost:5000/coach/userfooddiary/${id}`);
       const jsonData = await response.json();
-      console.log("coach jsondata",jsonData)
       setUserFoodDiary(jsonData);
       return jsonData;
     } catch (err) {

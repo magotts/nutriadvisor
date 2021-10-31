@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,16 +19,15 @@ export default function Login() {
   return (
     <div className="Login">
       <h1 class="userregisteration"> Registeration</h1>
-      
+
       <Form onSubmit={handleSubmit}>
-        
-          <Form.Label>Name</Form.Label>
-          <Form.Control
-            autoFocus
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
+        <Form.Label>Name</Form.Label>
+        <Form.Control
+          autoFocus
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
         <Form.Group size="lg" controlId="email">
           <Form.Label>PhoneNo</Form.Label>
           <Form.Control
@@ -39,7 +37,7 @@ export default function Login() {
             onChange={(e) => setPhoneNo(e.target.value)}
           />
         </Form.Group>
-        
+
         <Form.Group size="lg" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -49,7 +47,7 @@ export default function Login() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Group>
-        
+
         <Form.Group size="lg" controlId="password">
           <Form.Label>Password</Form.Label>
           <Form.Control

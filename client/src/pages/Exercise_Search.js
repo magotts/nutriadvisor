@@ -4,8 +4,6 @@ import Exercises from "../components/ExerciseInfo";
 import Alert from "../components/ExerciseAlert";
 import Sidebar from "../components/Sidebar";
 
-
-
 const Exercise_Search = () => {
   const [query, setQuery] = useState("");
   const [gender, setGender] = useState("");
@@ -39,7 +37,6 @@ const Exercise_Search = () => {
       axios
         .post(url, data, { headers })
         .then((result) => {
-          console.log(result.data);
           setExercises(result.data.exercises);
           setQuery("");
           setGender("");
@@ -71,14 +68,17 @@ const Exercise_Search = () => {
         display: "flex",
         padding: 0,
         margin: 0,
-        paddingTop: "98px"
+        paddingTop: "98px",
       }}
     >
       <Sidebar />
-      <div className="form_center" style={{
-        marginLeft: "20%",
-        color: "#a2cdcb"
-        }}>
+      <div
+        className="form_center"
+        style={{
+          marginLeft: "20%",
+          color: "#a2cdcb",
+        }}
+      >
         <h1>Exercise Search</h1>
         <form onSubmit={onSubmit}>
           {alert !== "" && <Alert alert={alert} />}
@@ -122,8 +122,12 @@ const Exercise_Search = () => {
               placeholder="Age"
               onChange={(event) => onChange(event, setAge)}
             />
-          
-          <input className="search-button" type="submit" value="Search Exercise" />
+
+            <input
+              className="search-button"
+              type="submit"
+              value="Search Exercise"
+            />
           </div>
         </form>
         <div>
@@ -139,6 +143,6 @@ const Exercise_Search = () => {
 
 export default Exercise_Search;
 
-{
+
   /* <h2 key={i} >{exercises['name']}</h2> */
-}
+

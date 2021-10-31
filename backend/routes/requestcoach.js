@@ -9,7 +9,6 @@ const requestcoachRouter = (db) => {
       const allGoaltypes = await db.query(`SELECT * FROM goaltypes`);
       res.json(allGoaltypes.rows);
     } catch (err) {
-      console.log("error", err);
       console.error(err.message);
     }
   });

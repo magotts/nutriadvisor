@@ -21,9 +21,6 @@ const EditWeight = ({ weight } ) => {
   };
 
   const [weights, setWeights] = useState(weight.weight);
-  //const [calories, setCalories] = useState(weight.calories_per_day);
-
-
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);

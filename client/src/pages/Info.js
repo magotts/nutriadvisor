@@ -1,23 +1,30 @@
-import { useContext } from 'react';
-import { authContext } from '../providers/AuthProvider';
+import { useContext } from "react";
+import { authContext } from "../providers/AuthProvider";
 
 export default function Info() {
-  const { user, logout } = useContext(authContext);
+  const { user } = useContext(authContext);
 
   // Show user Info
   return (
     <div>
-      <p style={{
+      <div
+        style={{
           color: "rgb(255, 255, 255)",
-          fontSize: "20px"
-      }}>
-        <div>Logged in as </div>
-        <div>{user.name}</div>
-      </p >
-      <p>
-     
-        {/* <button type="button" onClick={logout}>Logout</button> */}
-      </p>
+          fontSize: "20px",
+        }}
+      >
+        Logged in as{" "}
+      </div>
+      <div
+        style={{
+          color: "rgb(255, 255, 255)",
+          fontSize: "20px",
+        }}
+      >
+        {user.name}
+      </div>
+
+      <p>{/* <button type="button" onClick={logout}>Logout</button> // add logout in line 5 if logout is needed*/}</p>
     </div>
   );
-};
+}

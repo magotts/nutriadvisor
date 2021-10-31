@@ -1,19 +1,19 @@
-import { createContext, useState } from 'react';
+import { createContext, useState } from "react";
 
 export const authContext = createContext();
 
 export default function AuthProvider(props) {
   const [auth, setAuth] = useState(true);
-  const [user, setUser] = useState({name: "Diana", email:"q@q.com"});
+  const [user, setUser] = useState({ name: "Diana", email: "q@q.com" });
 
   // Perform login process for the user & save authID, etc
-  const login = function(email, password) {
+  const login = function (email, password) {
     setAuth(true);
     // const id = "1234-1234-1234";  // Some random userId
     setUser({ email, name: "Diana" });
   };
 
-  const logout = function() {
+  const logout = function () {
     setAuth(false);
     setUser(null);
   };
@@ -27,4 +27,4 @@ export default function AuthProvider(props) {
       {props.children}
     </authContext.Provider>
   );
-};
+}

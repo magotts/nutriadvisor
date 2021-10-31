@@ -5,8 +5,6 @@ const biometricsRouter = (db) => {
   // create a height, weight, calories
   router.post("/", async (req, res) => {
     try {
-      console.log("reqbody", req.body);
-
       const { weight, calories_per_day } = req.body;
       const newWeight = await db.query(
         `INSERT INTO biometrics(user_id, weight, calories_per_day) VALUES ('1', $1, $2) RETURNING *`,
@@ -21,15 +19,12 @@ const biometricsRouter = (db) => {
 
   // show weight
   router.get("/", async (req, res) => {
-    console.log("user id", req.params);
-
     try {
       const allWeights = await db.query(
         `SELECT * FROM biometrics where user_id = 1`
       );
       res.json(allWeights.rows);
     } catch (err) {
-      console.log("error", err);
       console.error(err.message);
     }
   });
@@ -46,10 +41,8 @@ const biometricsRouter = (db) => {
     where biometrics.user_id = $1`,
         [id]
       );
-      console.log("user info", userInfo);
       res.json(userInfo.rows);
     } catch (err) {
-      console.log("error", err);
       console.error(err.message);
     }
   });
@@ -98,10 +91,8 @@ const biometricsRouter = (db) => {
       where biometrics.user_id = $1`,
         [id]
       );
-      console.log("user info", userInfo);
       res.json(userInfo.rows);
     } catch (err) {
-      console.log("error", err);
       console.error(err.message);
     }
   });

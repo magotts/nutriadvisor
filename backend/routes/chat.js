@@ -9,7 +9,6 @@ const chatRouter = (http) => {
   });
 
   io.on("connection", (socket) => {
-    console.log(socket.id);
     socket.on("send-message", (message) => {
       socket.broadcast.emit("receive-message", message);
     });

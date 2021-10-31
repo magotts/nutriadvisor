@@ -1,22 +1,22 @@
 import { Modal, Button } from "react-bootstrap";
-import {useState} from "react";
+import { useState } from "react";
 
-const EditFood = ({ food } ) => {
-
+const EditFood = ({ food }) => {
   const updateFood = async (event) => {
     event.preventDefault();
     try {
-      const body = {breakfast, lunch, dinner, snacks};
-    const response  = await fetch(`http://localhost:5000/food_diary/${food.id}`, {
-      method: "PUT",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(body)
-    });
-    window.location ="/food_diary";
-    
-    }
-    catch (err) {
-      console.error(err.message)
+      const body = { breakfast, lunch, dinner, snacks };
+      const response = await fetch(
+        `http://localhost:5000/food_diary/${food.id}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        }
+      );
+      window.location = "/food_diary";
+    } catch (err) {
+      console.error(err.message);
     }
   };
 
@@ -31,7 +31,7 @@ const EditFood = ({ food } ) => {
 
   return (
     <>
-  <Button variant="primary" onClick={handleShow} >
+      <Button variant="primary" onClick={handleShow}>
         Edit
       </Button>
 
@@ -40,24 +40,52 @@ const EditFood = ({ food } ) => {
           <Modal.Title>Edit Food</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          Food Diary Date: {food.date_created} <br /><br />
-          <strong>Breakfast:</strong> <input type="text" className="form-control" value={breakfast} onChange={event => setBreakfast(event.target.value)}/><br/>
-          <strong>Lunch:</strong> <input type="text" className="form-control" value={lunch} onChange={event => setLunch(event.target.value)}/><br/>
-          <strong>Dinner:</strong> <input type="text" className="form-control" value={dinner} onChange={event => setDinner(event.target.value)}/><br/>
-          <strong>Snacks:</strong> <input type="text" className="form-control" value={snacks} onChange={event => setSnacks(event.target.value)}/><br/>
+          Food Diary Date: {food.date_created.substring(0, 10)} <br />
+          <br />
+          <strong>Breakfast:</strong>{" "}
+          <input
+            type="text"
+            className="form-control"
+            value={breakfast}
+            onChange={(event) => setBreakfast(event.target.value)}
+          />
+          <br />
+          <strong>Lunch:</strong>{" "}
+          <input
+            type="text"
+            className="form-control"
+            value={lunch}
+            onChange={(event) => setLunch(event.target.value)}
+          />
+          <br />
+          <strong>Dinner:</strong>{" "}
+          <input
+            type="text"
+            className="form-control"
+            value={dinner}
+            onChange={(event) => setDinner(event.target.value)}
+          />
+          <br />
+          <strong>Snacks:</strong>{" "}
+          <input
+            type="text"
+            className="form-control"
+            value={snacks}
+            onChange={(event) => setSnacks(event.target.value)}
+          />
+          <br />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={event => updateFood(event)}>
+          <Button variant="primary" onClick={(event) => updateFood(event)}>
             Save Changes
           </Button>
         </Modal.Footer>
       </Modal>
     </>
-  )
-}
+  );
+};
 
 export default EditFood;
-

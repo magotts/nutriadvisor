@@ -6,9 +6,7 @@ function Biometrics() {
   const [userInfo, setUserInfo] = useState([]);
 
   const [biometrics, setBiometrics] = useState([]);
-  // const [height, setHeight] = useState("");
   const [weight, setWeight] = useState("");
-  // const [calories, setCalories] = useState("");
 
   const deleteBiometrics = async (id) => {
     try {
@@ -37,7 +35,6 @@ function Biometrics() {
     try {
       const response = await fetch(`http://localhost:5000/biometrics/${id}`);
       const jsonData = await response.json();
-      console.log("json", jsonData);
       setUserInfo(jsonData);
       return jsonData;
     } catch (err) {
@@ -65,14 +62,12 @@ function Biometrics() {
         gender,
         calories_per_day,
       };
-      console.log("bodyyyyyy", body);
 
       const response = await fetch("http://localhost:5000/biometrics", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
-      console.log(response);
       window.location = "/biometrics";
     } catch (err) {
       console.error(err.message);
@@ -81,8 +76,7 @@ function Biometrics() {
 
   useEffect(() => {
     getBiometrics();
-    const info = getUserInfo(1);
-    console.log("info", userInfo);
+    getUserInfo(1);
   }, []);
 
   const calculateCalories = (weight, gender, height, age, choice) => {
@@ -117,54 +111,58 @@ function Biometrics() {
   };
 
   return (
+    <div
+      style={{
+        display: "flex",
+        padding: 0,
+        margin: 0,
+        paddingTop: "98px",
+      }}
+    >
+      <Sidebar />
       <div
-        style={{
-          display: "flex",
-          padding: 0,
-          margin: 0,
-          paddingTop: "98px"
-        }}
+        className="form_center"
+        style={{ color: "#a2cdcb", marginLeft: "20%" }}
       >
-        <Sidebar />
-        <div className="form_center" style={{color: "#a2cdcb", marginLeft: '20%'}}>
-          <form onSubmit={onSubmitForm}>
-            <span style={{ display: "none" }}>
-              {userInfo.length > 0 && (
-                <>
-                  <h2>
-                    {" "}
-                    User Information for {userInfo[0].first_name}{" "}
-                    {userInfo[0].last_name}
-                  </h2>
-                  <Table striped bordered hover>
-                    <thead>
-                      <tr>
-                        <th>Gender:</th>
-                        <td>
-                          <span name="gender">{userInfo[0].gender}</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>Age:</th>
-                        <td>
-                          <span name="age">{userInfo[0].age}</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>Height (cm):</th>
-                        <td>
-                          <span name="height">{userInfo[0].height}</span>
-                        </td>
-                      </tr>
-                    </thead>
-                  </Table>
-                </>
-              )}
-            </span>
-            <br /><center>
+        <form onSubmit={onSubmitForm}>
+          <span style={{ display: "none" }}>
+            {userInfo.length > 0 && (
+              <>
+                <h2>
+                  {" "}
+                  User Information for {userInfo[0].first_name}{" "}
+                  {userInfo[0].last_name}
+                </h2>
+                <Table striped bordered hover>
+                  <thead>
+                    <tr>
+                      <th>Gender:</th>
+                      <td>
+                        <span name="gender">{userInfo[0].gender}</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Age:</th>
+                      <td>
+                        <span name="age">{userInfo[0].age}</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Height (cm):</th>
+                      <td>
+                        <span name="height">{userInfo[0].height}</span>
+                      </td>
+                    </tr>
+                  </thead>
+                </Table>
+              </>
+            )}
+          </span>
+          <br />
+          <center>
             <h2>Get your Daily Calories</h2>
             <strong>Enter your Weight(kg):</strong>
-            <br/>
+            <br />
             <input
               className="search-form"
               type="text"
@@ -201,47 +199,43 @@ function Biometrics() {
               </option>
             </select>
             <br />
-            <button className="request-button">Add</button></center>
-            <br />
-          </form>
+            <button className="request-button">Add</button>
+          </center>
           <br />
+        </form>
+        <br />
 
-          <Table striped borderless>
-            <thead style={{ color: "#a2cdcb" }}>
-              <tr>
-                <th>Date</th>
-                <th>Weight(kg)</th>
-                <th>Calories Per Day</th>
-                <th></th>
+        <Table striped borderless>
+          <thead style={{ color: "#a2cdcb" }}>
+            <tr>
+              <th>Date</th>
+              <th>Weight(kg)</th>
+              <th>Calories Per Day</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody style={{ color: "#a2cdcb" }}>
+            {biometrics.map((weight) => (
+              <tr key={weight.id}>
+                <td>{weight.date_created.substring(0, 10)}</td>
+                <td>{weight.weight}</td>
+                <td>{weight.calories_per_day}</td>
+                <td>
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => deleteBiometrics(weight.id)}
+                  >
+                    Delete
+                  </button>
+                </td>
               </tr>
-            </thead>
-            <tbody style={{ color: "#a2cdcb" }}>
-              {biometrics.map((weight) => (
-                <tr key={weight.id}>
-                  <td>{weight.date_created.substring(0, 10)}</td>
-                  <td>{weight.weight}</td>
-                  <td>{weight.calories_per_day}</td>
-                  <td>
-                    <button
-                      className="btn btn-danger"
-                      onClick={() => deleteBiometrics(weight.id)}
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </Table>
-        </div>
+            ))}
+          </tbody>
+        </Table>
       </div>
+    </div>
   );
 }
 
-// sedentary (little or no exercise) : Calorie-Calculation = BMR x 1.2
-// lightly active (light exercise/sports 1-3 days/week) : Calorie-Calculation = BMR x 1.375
-// moderately active (moderate exercise/sports 3-5 days/week) : Calorie-Calculation = BMR x 1.55
-// very active (hard exercise/sports 6-7 days a week) : Calorie-Calculation = BMR x 1.725
-// extra active (very hard exercise/sports & physical job or 2x training) : Calorie-Calculation = BMR x 1.9
 
 export default Biometrics;
