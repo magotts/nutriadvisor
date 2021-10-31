@@ -80,28 +80,28 @@ function RequestCoach() {
         }}
       >
         <Sidebar />
-        <main className="form_center" style={{ marginLeft: "20%" }}>
+        <main className="form_center" style={{ color: "#a2cdcb", marginLeft: "20%" }}>
           <section className="select">
             <br />
             <strong>
-              <h4>Choose your goal:</h4>
+              <h1>Choose your goal:</h1>
             </strong>
             <select
+              className="goal-dropdown"
               value={goalId}
               onChange={(event) => setGoalId(event.target.value)}
             >
               {/* dropdown will have the goaltypes (select * from goaltypes)  */}
-              <option selected value="choose">
+              <option selected value="choose" >
                 Please choose below
               </option>
               {goalOptions}
             </select>
-            <br />
           </section>
  
           {theCoach && (
             <section className="select">
-              <h4>{theCoach.alias}</h4>
+              <h2>{theCoach.alias}</h2>
                 <center>
                   {theCoach.id && (
                   <div>
@@ -109,7 +109,7 @@ function RequestCoach() {
                   </div>
                   )}
                   <br/>
-                     <button onClick={request}>Request for this Coach</button>
+                     <button onClick={request} className="request-button">Request for this Coach</button>
                 </center>
             </section>
           )}

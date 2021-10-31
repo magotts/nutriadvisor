@@ -1,12 +1,28 @@
 .title {
   padding-top:50px;
 }
-.container {
+
+.goal-dropdown {
+  width: 20em;
+  height: 2em;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding-top:10px;
-  width: auto;
+  background-color: #d3d3d3;
+  border-radius: 0.5rem;
+  margin-bottom: 5rem;
+  box-shadow: 1rem 2rem 5rem #aaa;
+}
+
+.request-button {
+  font-size: 1em;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #a2cdcb;
+  border: none;
+  border-radius: 0.5rem;
+  width: 10em;
+  height: 3em;
 }
 
 .select {
@@ -20,6 +36,9 @@
   margin-top: 1em;
   height: 350px;
   text-align: center;
+  box-shadow: 2rem 3rem 5rem #aaa;
+  background-color: #eaf2ef;
+  padding: 2rem;
 }
 
 h1 {
@@ -30,26 +49,3 @@ h1 {
 h4 {
   text-align: center;
 }
-/* 
-.form_center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 1em;
-    width: 50%;
-    justify-content: space-between;
-   
-
-}
-
-.excercise {
-  
-  justify-content: space-between;
-}
-
-
-.table{
-  font-size: large;
-}
-} */

@@ -126,7 +126,7 @@ function Biometrics() {
         }}
       >
         <Sidebar />
-        <div className="form_center" style={{marginLeft: '20%'}}>
+        <div className="form_center" style={{color: "#a2cdcb", marginLeft: '20%'}}>
           <form onSubmit={onSubmitForm}>
             <span style={{ display: "none" }}>
               {userInfo.length > 0 && (
@@ -162,18 +162,18 @@ function Biometrics() {
               )}
             </span>
             <br /><center>
-            <h3>Get your Daily Calories</h3>
+            <h2>Get your Daily Calories</h2>
             <strong>Enter your Weight(kg):</strong>
             <br/>
             <input
+              className="search-form"
               type="text"
               value={weight}
               onChange={(event) => setWeight(event.target.value)}
             />
-            <br />
-            <br />
             <strong>How active are you?</strong> <br />
             <select
+              className="goal-dropdown"
               value={choice}
               onChange={(event) => {
                 const selectedState = event.target.value;
@@ -201,13 +201,13 @@ function Biometrics() {
               </option>
             </select>
             <br />
-            <button>Add</button></center>
+            <button className="request-button">Add</button></center>
             <br />
           </form>
           <br />
 
-          <Table striped bordered hover>
-            <thead>
+          <Table striped borderless>
+            <thead style={{ color: "#a2cdcb" }}>
               <tr>
                 <th>Date</th>
                 <th>Weight(kg)</th>
@@ -215,7 +215,7 @@ function Biometrics() {
                 <th></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody style={{ color: "#a2cdcb" }}>
               {biometrics.map((weight) => (
                 <tr key={weight.id}>
                   <td>{weight.date_created.substring(0, 10)}</td>

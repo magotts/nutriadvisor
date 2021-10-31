@@ -69,19 +69,19 @@ function Food_Diary() {
       paddingTop: "98px"
     }}>
       <Sidebar />
-      <div className="form_center" style={{ marginLeft: "20%" }}>
+      <div className="form_center" style={{ marginLeft: "20%", color: "#a2cdcb" }}>
         <h1 className= "Fooddiary">Food Diary</h1>
         <form className="form-center" onSubmit={onSubmitForm}>
-          Breakfast:<input class="breakfast" type="text" value={breakfast} onChange={ event => setBreakfast(event.target.value)}/><br/>
-          Lunch:<input type="text" value={lunch} onChange={ event => setLunch(event.target.value)}/><br/>
-          Dinner:<input type="text" value={dinner} onChange={ event => setDinner(event.target.value)}/><br/>
-          Snacks:<input type="text" value={snacks} onChange={ event => setSnacks(event.target.value)} /><br/>
-            <button>Add</button>
+          Breakfast:<input className="exesearch-form" type="text" value={breakfast} onChange={ event => setBreakfast(event.target.value)}/><br/>
+          Lunch:<input className="exesearch-form" type="text" value={lunch} onChange={ event => setLunch(event.target.value)}/><br/>
+          Dinner:<input className="exesearch-form" type="text" value={dinner} onChange={ event => setDinner(event.target.value)}/><br/>
+          Snacks:<input className="exesearch-form" type="text" value={snacks} onChange={ event => setSnacks(event.target.value)} /><br/>
+            <button className="request-button">Add</button>
             </form>
        <br/>
         
-        <Table striped bordered hover>
-  <thead>
+        <Table striped borderless>
+  <thead style={{ color: "#a2cdcb" }}>
     <tr>
       <th>Date</th>
       <th>Breakfast</th>
