@@ -1,8 +1,21 @@
-# Getting Started with Create React App
+# NutriAdvisor - Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description 
 
-## Available Scripts
+## Features:
+- Request a Coach
+- Counting Daily Calories
+- Logging Food Diary
+- Exercise Search and know how much calories were burned.
+- Food Search - check the food's nutrients and its value per serving.
+
+
+## Tech Stack
+- Front-end: React
+- Back-end: NodeJS, Express
+- Database: PostgreSQL
+
+## Dependencies
 
 In the project directory, you can run:
 
