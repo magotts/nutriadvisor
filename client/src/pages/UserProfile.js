@@ -112,7 +112,7 @@ function UserProfile() {
           <tr>
             <th>Assigned Coach:</th>
             <td><span name="coach-name">{userGoal[0].alias} </span> 
-            <button className="userfirebutton" style={{ backgroundColor: "#a2cdcb" }} onClick={()=> deleteGoal(userGoal[0].id)}>Fire</button>
+            <button className="userfirebutton" style={{ backgroundColor: "#a2cdcb" }} onClick={()=> deleteGoal(userGoal[0].id)}>Leave</button>
             </td>
           </tr>
           </thead>
