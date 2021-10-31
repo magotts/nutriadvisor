@@ -15,7 +15,25 @@
 - Back-end: NodeJS, Express
 - Database: PostgreSQL
 
-## Dependencies
+## Dependencies - not final
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@mui/icons-material": "^5.0.5",
+    "@mui/material": "^5.0.6",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.23.0",
+    "bootstrap": "^5.1.3",
+    "dotenv": "^8.2.0",
+    "react": "^17.0.2",
+    "react-bootstrap": "^2.0.0",
+    "react-chat-widget": "^3.0.5",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.3.0",
+    "react-scripts": "4.0.3",
+    "socket.io-client": "^4.3.2",
+    "styled-components": "^5.3.3",
 
 In the project directory, you can run:
 
