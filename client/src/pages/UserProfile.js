@@ -143,7 +143,7 @@ function UserProfile() {
                               style={{ backgroundColor: "#a2cdcb" }}
                               onClick={() => deleteGoal(userGoal[0].id)}
                             >
-                              Leave
+                              Cancel
                             </button>
                           </td>
                         </tr>

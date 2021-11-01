@@ -23,6 +23,7 @@ const Food_Search = () => {
     if (query !== "") {
       const result = await axios.get(api_url);
       setFoods(result.data.foods);
+      console.log(result)
       setQuery("");
       setAlert("");
     } else {
