@@ -65,7 +65,7 @@ function Food_Diary() {
         style={{ marginLeft: "20%", color: "#a2cdcb" }}
       >
         <h1 className="Fooddiary">Food Diary</h1>
-        <form className="form-center" onSubmit={onSubmitForm}>
+        <form className="form-center" style= {{color: "cadetblue", fontSize: "x-large"}} onSubmit={onSubmitForm}>
           Breakfast:
           <input
             className="exesearch-form"
@@ -103,7 +103,7 @@ function Food_Diary() {
         <br />
 
         <Table striped borderless>
-          <thead style={{ color: "#a2cdcb" }}>
+          <thead style={{ color: "cadetblue" }}>
             <tr>
               <th>Date</th>
               <th>Breakfast</th>

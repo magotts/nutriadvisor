@@ -84,7 +84,7 @@ function UserProfile() {
                 <Table borderless>
                   <thead
                     className="table table-borderless"
-                    style={{ color: "#a2cdcb" }}
+                    style={{ color: "cadetblue" }}
                   >
                     <tr>
                       <th>Name:</th>
@@ -124,7 +124,7 @@ function UserProfile() {
                     <Table borderless>
                       <thead
                         className="table table-borderless"
-                        style={{ color: "#a2cdcb" }}
+                        style={{ color: "cadetblue" }}
                       >
                         <tr>
                           <th>Goal:</th>

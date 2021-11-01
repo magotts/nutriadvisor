@@ -98,7 +98,7 @@ function RequestCoach() {
 
         {theCoach && (
           <section className="select">
-            <h2>{theCoach.alias}</h2>
+            <h2 style= {{color :"cadetblue"}}>{theCoach.alias}</h2>
             <center>
               {theCoach.id && (
                 <div>

@@ -53,7 +53,7 @@ const Food_Search = () => {
         className="form_center"
         style={{
           marginLeft: "20%",
-          color: "#a2cdcb",
+          color: "cadetblue",
           height: "100%",
         }}
       >

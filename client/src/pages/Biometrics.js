@@ -122,7 +122,7 @@ function Biometrics() {
       <Sidebar />
       <div
         className="form_center"
-        style={{ color: "#a2cdcb", marginLeft: "20%" }}
+        style={{ color: "cadetblue", marginLeft: "20%" }}
       >
         <form onSubmit={onSubmitForm}>
           <span style={{ display: "none" }}>
@@ -160,7 +160,7 @@ function Biometrics() {
           </span>
           <br />
           <center>
-            <h2>Get your Daily Calories</h2>
+            <h1 style={{color: "cadetblue"}}>Get your Daily Calories</h1><br/>
             <strong>Enter your Weight(kg):</strong>
             <br />
             <input
@@ -206,7 +206,7 @@ function Biometrics() {
         <br />
 
         <Table striped borderless>
-          <thead style={{ color: "#a2cdcb" }}>
+          <thead style={{ color: "cadetblue" }}>
             <tr>
               <th>Date</th>
               <th>Weight(kg)</th>
@@ -214,7 +214,7 @@ function Biometrics() {
               <th></th>
             </tr>
           </thead>
-          <tbody style={{ color: "#a2cdcb" }}>
+          <tbody style={{ color: "cadetblue" }}>
             {biometrics.map((weight) => (
               <tr key={weight.id}>
                 <td>{weight.date_created.substring(0, 10)}</td>

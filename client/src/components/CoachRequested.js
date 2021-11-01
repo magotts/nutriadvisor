@@ -3,7 +3,7 @@ const CoachRequested = (props) => {
     <div>
       <br />
       <center>
-        <h2>
+        <h2 style= {{color: "cadetblue"}}>
           Congratulations! 🎉 <br />
           You are now assigned to {props.name}!
         </h2>
