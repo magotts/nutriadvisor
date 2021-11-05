@@ -9,7 +9,7 @@
 ## Description 
 A versatile app for people who wants to achieve goals such as lose/maintain/gain weight and healthy lifestyle with the help of coaches (optional). The user also has the ability to search for exercise and know how much calories were burned and search for food and know the values of each nutrients.
 
-![Homepage](client/docs/requestcoach.gif)
+![Homepage](https://github.com/magotts/nutriadvisor/blob/master/client/docs/homepage.jpg?raw=true)
 
 ## Features:
 - Request a Coach - if you want to be guided by one.
